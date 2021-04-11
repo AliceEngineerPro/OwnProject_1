@@ -1,0 +1,66 @@
+# 字典 dict
+info0 = {
+    'a': '1',  # 键值对
+    'b': '2'
+}
+
+info1 = {
+    'k1': 1,
+    'k2': True,
+    'k3': [
+        11,
+        22,
+        33,
+        {
+            'k11': 11,
+            'k22': 22,
+        }
+    ],
+    'k4': (1, 2, 3, 4,)
+}
+
+# print(info1)
+
+# 键(key): 可以是字符串,数字,元组 , 不能是列表,字典.  特殊:bool,布尔值,True(1),False(0),可能会和数数字中的1和0冲突
+# 值(value): 任意数值
+
+# 字典是无序的.
+# 获取value,根据索引
+v0 = info1['k1']
+# print(v0)
+
+v1 = info1['k3'][3]['k11']
+# print(v1)
+
+# 字典无序,不能切片
+# 删除键值对
+del info1['k1']  # 通过索引
+
+# for 循环 # 默认是for循环字典中的键
+for i in info1:
+    print(i)
+
+for i1 in info1.keys():
+    print(i1)
+
+for i2 in info1.values():
+    print(i2)
+
+for k, v in info1.items():  # 键值对对应
+    print(k, v)
+
+# 清空
+info1.clear()
+# 浅copy
+info1.copy()
+# 生成新字典的值, 根据序列生成
+d1 = dict.fromkeys(['d1', 123, 'd2'], 123)  # 用类名
+# 根据keys找到对应的Value, 如果没有keys 返回NALL (空)
+d = d1.get('s')
+# 删除keys 对应的value,并显示value
+info1.pop('k1')
+# 设置value, 1:存在keys.不设置该value,2:不存在,设置并传值
+info1.setdefault('k1')
+# 存在的更新value.,不存在的添加ditc
+info1.update({'k1': 111, 'k3': '123'})
+info1.update(k1=111, k2=112)

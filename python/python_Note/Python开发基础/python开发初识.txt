@@ -1,0 +1,42 @@
+python开发
+机器码和字节码
+	机器码 ：计算机可以直接认识的语言
+	字节码 ：高级语言转换成机器码去执行
+
+语言之间的对比：
+	C，汇编 ；C语言是根语言
+	python Java ：既能写前端，又能写后端。
+		Java的执行效率比python的执行效率高，
+		python的代码简单，python的开发效率比Java的高 
+	PHP类 ：有局限性，写页面，网站 更好的开发。
+	
+python的种类；
+	Jpython
+	IronPython
+	CPython
+	RunbyPython
+	
+	pypy  用python开发的python
+	
+	
+	安装python执行操作：
+		写一个文件，文件中按照python的规则写，交给python软件，读取文件中的内容，然后进行转换和执行，最终获取结果
+		
+		cmd--》python (路径)(文件名)
+		
+		python软件--》python解释器 (内存管理)
+		
+		下载:(向下兼容)
+			python3 	 继续更新
+			python2 
+			
+			python2 和 python3 都安装
+			Windows 配置环境变量. path=路径
+			
+	
+	python变量名: 单词与单词之间最好使用'-'来连接
+
+
+
+
+

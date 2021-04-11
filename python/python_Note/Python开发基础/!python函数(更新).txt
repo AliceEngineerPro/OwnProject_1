@@ -1,0 +1,58 @@
+	 1.
+	 打印:
+	 print()  # 打印,输出
+	 2.
+	 变量:
+	 var = 'hello'  # 变量var , 把'hello' 赋值给变量 var
+	 3.
+	 if 函数:  # 代码块 4个空格或者一个tab
+		 用法1:
+	 if 如果条件成立 , 执行if下的代码块, 否则 条件不成立 执行 else 下的代码块
+	 if 条件:
+		 print()
+	 else:
+		 否则
+	 用法2: 没有 else 先执行 if 块下的, 不成立返回
+	 if 条件:
+		 print()
+	 print()
+	 用法3: 嵌套 if
+	 if 条件:
+		 if 条件:
+			 print()
+		 else:
+			 print()
+	 else:
+	 用法4:
+	 if elif 语句
+	 vip = input('请输入会员级别:')
+	 if vip == '高级会员'
+		 print('美女')
+	 elif vip == '白金会员'
+		 print('大妈')
+	 elif vip == '铂金会员'
+		 print('一线小明星')
+	 else:
+		 print('城管')
+	 print('开始服务吧....')
+	 用法5:
+	 if 1 == 1:
+		 pass  # if不执行,pass表示过
+	 else:
+		 print()
+	 4.
+	 input
+	 函数:
+	 用法: 输出函数, input输入的都是str类型(字符串)
+	 变量 = input('请输入:XX')
+	 var = input('请输入"你的姓名"')  # 输出函数,
+	 print(var)  # 打印显示'XX'
+	 5.
+	 while 循环:
+		 用法:
+	 count = 0
+	 while count < 10:
+		 print('ok')
+		 count = 100
+		 # count = count + 1
+	 print('end')

@@ -1,0 +1,228 @@
+# 代码块1
+name = '小明'
+
+
+def foo():
+    name = 'foo小明'
+
+    def bar():
+        name = 'bar小明'
+        print(name)
+    return bar()
+
+
+func = foo()
+print(func)
+
+
+# 代码块2
+name_1 = '小明'
+
+
+def foo_1():
+    name_1 = 'foo小明'
+    print(name_1)
+
+
+def bar_1():
+    name_1 = 'bar小明'
+    print(name_1)
+    # return bar_1()
+
+
+foo_1()
+bar_1()
+
+
+# 块3
+name_3 = '小明'
+
+
+def foo_3():
+    name_3 = 'foo小明'
+    print(name_3)
+
+    def bar_3():
+        name_3 = 'bar小明'
+        print(name_3)
+
+        def tt():
+            print(name)
+        return tt
+    return bar_3
+
+
+foo_3()
+foo_3()()
+foo_3()()()
+
+
+# 匿名函数 lambda 函数形参:return后的
+"""
+匿名函数用法
+    a = lambda x: x+1
+    print(a)
+    //
+    a:变量
+    lambda: 匿名函数关键字
+    x: 函数形参
+    x+1: return后的逻辑
+    最后print(a) 
+"""
+
+def calc(x):
+    return x + 1
+
+
+print(calc(10))
+
+number = lambda x: x + 1
+print(number(10))
+
+
+# 改名
+# def change_name(x):
+#     return name + '_hh'
+#
+#
+# print(change_name(name))
+
+
+change_name = lambda z: z + '好聪明'
+print(change_name(name))
+
+
+# 返回多个函数值
+number_1 = lambda x, y: (x + 1, y + 2)
+print(number_1(9, 18))
+
+
+# 高阶函数1.把函数的返回值当做参数, 2.返回值中包含函数
+
+# 把函数的返回值当做参数
+
+"""
+
+
+def foo(x):
+    print(x)
+
+
+def ber(manage): # 高阶函数
+    print('My name is %s ' % manage)
+    # return manage
+
+
+foo(ber('小明'))
+
+"""
+
+# 返回值中包含函数
+
+"""
+
+
+def bar():
+    print('from bar')
+
+
+def foo():
+    print('from foo') # 高阶函数
+    return bar
+
+
+foo()()
+
+print('-' * 20)
+
+
+def hi():
+    print('Hi')
+
+
+def hello(): 
+    print('hello world')
+    return hi()
+
+
+hello()
+
+"""
+
+# 函数式编程
+num_list = [1, 2, 3, 4, 5]
+
+
+# add_one = lambda x: x+1
+def add_one(x):
+    return x + 1
+
+
+# less_one = lambda x: x-1
+def less_one(x):
+    return x - 1
+
+
+# square_list = lambda x: x**2
+def square(x):
+    return x ** 2
+
+
+def map_list(func, array):
+    new_list = []
+    for i in array:
+        func(i)
+        new_list.append(func(i))
+    return new_list
+
+
+"""
+new_add_list = map_list(func=add_one, array=num_list)
+new_less_list = map_list(func=less_one, array=num_list)
+print(new_add_list)
+print(new_less_list)
+new_square_list = map_list(func=lambda x: x**2, array=num_list)
+print(new_square_list)
+"""
+
+
+# map内置函数
+new_map_add = map(lambda x: x ** 2, num_list)
+print('内置函数map,', '处理方法x^2,', '处理结果:', list(new_map_add))
+
+new_map_less = map(less_one, num_list)
+print('内置函数map,', '处理方法x-1,', '处理结果:', list(new_map_less))
+
+msg = 'xiaoming'
+new_msg = list(map(lambda x: x.upper(),msg))
+print(new_msg)
+
+# 函数式编程
+# filter函数
+people = ['1号', 'sb_2号', '3号', '4号', 'sb_5号', '6号_sb']
+
+
+# lambda x: x.endswith('sb')
+# def sb_show(n):
+#     return n.endswith('sb')
+
+
+def good_p(func, array):
+    good_people = []
+    for p in array:
+        if not func(p):
+            good_people.append(p)
+    return good_people
+
+
+# new_people = good_p(lambda x: x.endswith('sb'), people)
+# print(new_people)
+
+
+# filter函数
+new_filter_people_1 = filter(lambda x: not x.endswith('sb'), people)
+new_filter_people_2 = filter(lambda x: not x.startswith('sb'), people)
+print(list(new_filter_people_1))
+print(list(new_filter_people_2))
+
+

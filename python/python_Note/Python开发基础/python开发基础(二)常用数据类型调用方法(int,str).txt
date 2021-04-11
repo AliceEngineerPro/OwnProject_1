@@ -1,0 +1,118 @@
+
+数字: int 
+
+int : 转换,将字符串转化成数字
+num1 = '123'
+num2 = int (a)
+numadd = num2 +1000
+print(num2)
+
+num3 = 'a'
+v = int (num3 , base = 16 ) # base==n ,base 表示进制,base = 16 就是16进制
+print(v)
+
+
+bit_length : 至少用几个二进制位表示
+age = '18'
+a = age.bit_length() #  该数字的二进制位是多少
+print(a)
+
+
+字符串: str 
+
+callable # 首字母大写
+text = 'str'
+b = text.callable()
+print(b)
+
+callable # 把所有的变成小写
+c = text.casefold() # 未知的对应关系也可以.
+print(c)
+d = text.lower()
+print(d)
+
+center # 设置宽度,并将内容居中
+e = text.center(20,'#') # center 表示字符串居中,打印输出20个字符位,其他用'#'代替,代替符只能是一个字符
+print(e)
+
+count # 计算该字符串中出现了多少次该字符
+f = text.count('e',5) # 从开始到第5个字符,可以设置起始位置 和 结束位置
+print(f)
+
+##### encode decode 
+
+endswith # 以XXX结尾(判断)
+g = text.endswith('a') # 判断该字符串是不是以'a'结尾
+print(g)
+startswith # 以XXX开头(判断)
+
+find # 从开始往后找,找到第一个之后,获取其位置
+h = text.find('a',5) # 从开始到第5个字符,可以设置起始位置 和 结束位置
+
+format # 格式化,将字符串中的占位符替换成指定的值
+text = 'i , an ,{name},age {a} '
+print(text)
+j = text.format(name='XXX',a=18) # 从text中的{name}替换成'XXX'
+
+text = 'i , an ,{0},age {1} '
+j0 = text.format('XXX',18) # 从text中的0替换成'XXX'
+
+text = 'i , an ,{name},age {a} '
+k1 = text.format (name='XXX',a=28)
+k2 = text.format ({'name':'XXX','age','18'})
+print(k1)
+print(k2)
+
+index # 和find 相同,如果找不到报错
+l = text.index('8')
+
+isalnum # 判断只能字符串中只包括字母和数字
+q = text.isalnum()
+
+expandtabs # 断句按位,空字符补全
+w = text.expandtabs(2)
+
+text.isalnum # 判断是否有字母
+text.isdecimal # 判断是否有数字 (十进制小数) 
+text.isalpha # 判断是否数字 (带有数学符号比如说②)
+
+text.swapcase # 是否有符号下划线等
+
+text.islower # 
+text.isnumeric # 是否有数字包含,一,壹
+text.property # 
+text.isprintable # 
+text.isspace # 是否是空格
+text.join # 字符串循环
+text.ljust # 字符串向左填充
+
+7个基本
+join
+split
+find
+strip
+lower
+upper
+replace # 替换 
+
+其他
+
+test = 'alex'
+v = test[0] # 索引,下标 获取字符串某一个字符
+print(V)
+
+# 切片
+
+v1 = test[0:1] / [1:-1] # 索引范围左臂右开区间,>=0 <1
+
+v2 = len(test) # 获取当前字符串由几个字符组成
+
+li = [11,22,33,44,55,'wsad']
+len(li) # 列表计算用逗号分隔的
+
+字符串一旦创建就不可以修改
+一旦修改或拼接都会形成新的字符串
+
+v = range(100) # 表示0-99 用for循环才会创建 range : 创建连续的数字
+v1 = range(1,100,5) # 步长为5 ,每隔5创建循环
+

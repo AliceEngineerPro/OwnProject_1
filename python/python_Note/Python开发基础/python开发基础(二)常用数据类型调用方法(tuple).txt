@@ -1,0 +1,51 @@
+# 列表
+l = [1, 2, 3, 4, 5]
+# 元组
+t = (1, 2, 3, 4, 5)
+
+# 列表可以修改删除和增加,元组不可被修改,不能被删除增加,
+tuple1 = (1, 'a', (2, 3), [4, 5], True, 6, '7',)
+# 一般写元组的时候在元组的最后的括号前加逗号
+
+# 索引
+s = tuple1[0]
+print(s)
+
+# 切片
+c = tuple1[2:3]
+print(c)
+
+# for 循坏,可迭代对象
+for i in tuple1:
+    print(i)
+
+# 转换到元组tuple
+test0 = 'a'
+test1 = ['1', 2]
+test2 = ('3', '4',)
+
+z0 = tuple(test0)
+print(z0)
+
+z1 = tuple(test1)
+print(z1)
+
+'''
+z2 = '_'.join(test2)
+print(z2)
+'''
+
+# 元组是有序的
+tuple1 = (1, 'a', (2, 3), [4, 5], True, 6, '7',)
+tu = tuple1[3][0]
+print(tu)
+# 输出:4
+
+# 元组的第一个元素整体不能修改
+tuple1[3][0] = 45
+print(tuple1)
+# 一级元素不可被修改
+
+tuple2 = (1, 2, 3, 4, 5,)
+# count .获取元素在元组中出现的次数
+# index .获取某一个值得索引位置
