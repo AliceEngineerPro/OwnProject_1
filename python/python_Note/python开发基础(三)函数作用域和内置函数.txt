@@ -1,3 +1,5 @@
+from functools import reduce
+
 # 代码块1
 name = '小明'
 
@@ -67,7 +69,7 @@ foo_3()()()
     lambda: 匿名函数关键字
     x: 函数形参
     x+1: return后的逻辑
-    最后print(a)
+    最后print(a) 
 """
 
 def calc(x):
@@ -140,7 +142,7 @@ def hi():
     print('Hi')
 
 
-def hello():
+def hello(): 
     print('hello world')
     return hi()
 
@@ -219,10 +221,38 @@ def good_p(func, array):
 # print(new_people)
 
 
+# 函数式编程
 # filter函数
 new_filter_people_1 = filter(lambda x: not x.endswith('sb'), people)
 new_filter_people_2 = filter(lambda x: not x.startswith('sb'), people)
 print(list(new_filter_people_1))
 print(list(new_filter_people_2))
 
+print('-' * 50)
 
+# filter函数
+num_list = [1, 2, 3, 4]
+tools_1 = (lambda x, y: x * y)
+
+
+# def multi(x, y):
+#     return x * y
+
+
+def reduce_list(func, array, init=None):
+    if init is None:
+        new = array.pop(0)
+    else:
+        new = init
+    for num in array:
+        new = func(new, num)
+    return new
+
+
+# print(reduce_list(tools_1, num_list, 100))
+
+# map 传入列表, 输出列表, 顺序不变
+# filter 传入列表,遍历列表,输入列表
+# reduce函数
+reduce_new = reduce(tools_1, num_list, 100)
+print(reduce_new)
