@@ -48,4 +48,49 @@ a+, 读写
 # w_file.close()
 
 
-# 文件处理b模式
+# 文件处理b模式  /b的模式不能使用encoding
+# r = open('文件', 'rb')
+# data_r = r.read()
+# print(data_r)
+
+# w = open('文件', 'wb')
+# w.write(bytes('111\n', encoding='utf8'))
+# w.write(bytes('小明\n'.encode('utf8')))
+
+# a = open('文件', 'ab')
+# a.write(bytes('\n小明'.encode('utf8')))
+
+
+# 文件其他操作方法
+"""
+f = open('文件new', 'r+', encoding='utf8')
+data = f.read()
+print(data)
+f.write('111\n')
+f.flush()  # 保存文件
+# f.name  # 文件名
+f.readlines()
+f.tell()  # 光标所在位置 (以字节计算)
+f.seek(0)  # 光标位置, 只要不是read方法, 其他都是以字节计算光标
+f.truncate()  # 截断
+"""
+
+# seek 用法 光标位置
+"""
+f = open('文件new', 'r+', encoding='utf8')
+print(f.tell())
+f.seek(3)  # 默认为0
+print(f.tell())
+print(f.read())
+"""
+
+
+# 模拟读日志文件
+# 遍历文件
+# f = open('file/文件', 'rb')
+# data = f.readlines()
+# print(data[-1].decode('utf8'))
+# seek
+f = open('file/文件', 'rb')
+for i in f:
+    print(i)
