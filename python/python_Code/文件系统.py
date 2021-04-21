@@ -62,7 +62,8 @@ a+, 读写
 
 
 # 文件其他操作方法
-f = open('file/文件new', 'r+', encoding='')
+"""
+f = open('文件new', 'r+', encoding='utf8')
 data = f.read()
 print(data)
 f.write('111\n')
@@ -70,3 +71,38 @@ f.flush()  # 保存文件
 # f.name  # 文件名
 f.readlines()
 f.tell()  # 光标所在位置 (以字节计算)
+f.seek(0)  # 光标位置, 只要不是read方法, 其他都是以字节计算光标
+f.truncate()  # 截断
+"""
+
+# seek 用法 光标位置
+"""
+f = open('文件new', 'r+', encoding='utf8')
+print(f.tell())
+f.seek(3)  # 默认为0
+print(f.tell())
+print(f.read())
+"""
+
+
+# 模拟读日志文件
+# 遍历文件
+# f = open('file/文件', 'rb')
+# data = f.readlines()
+# print(data[-1].decode('utf8'))
+# seek 光标
+"""
+f = open('file/文件', 'rb')
+for i in f:
+    offs = -5
+    while True:
+        f.seek(offs, 2)
+        data = f.readlines()
+        if len(data) > 1:
+            print('文件最后一行是%s' % (data[-1].decode('utf8')))
+            break
+        offs *= 2
+
+    pass
+"""
+
