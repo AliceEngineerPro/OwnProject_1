@@ -25,8 +25,9 @@ for p in get:
 
 
 all_p = set(p_dic_list)
+# all_p1 = list(all_p)  # 转到列表查看索引
+# print(all_p1[0])
 
-j = 1
 for j in range(count):
     # if j > 0:
     print(p_dic_list[j] / sum(all_p))

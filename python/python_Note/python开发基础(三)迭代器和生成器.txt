@@ -1,6 +1,7 @@
 # 迭代器和生成器
-l = [1, 2, 3]
+from typing import List
 
+l: List[int] = [1, 2, 3]
 # for循环
 """
 for i in l:  # l.__iter__() /l.__iter__.__next__()
