@@ -1,3 +1,5 @@
+# 参数向上寻找
+
 def foo():
     print('hello')
 

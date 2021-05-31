@@ -7,7 +7,6 @@
 
 知识储备
 装饰器 = 高阶函数 + 函数嵌套 + 闭包
-
 """
 import time
 import pack_1
