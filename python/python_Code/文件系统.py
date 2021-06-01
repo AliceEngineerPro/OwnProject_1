@@ -87,12 +87,12 @@ print(f.read())
 
 # 模拟读日志文件
 # 遍历文件
-# f = open('file/文件', 'rb')
+# f = open('File_management/文件', 'rb')
 # data = f.readlines()
 # print(data[-1].decode('utf8'))
 # seek 光标
 """
-f = open('file/文件', 'rb')
+f = open('File_management/文件', 'rb')
 for i in f:
     offs = -5
     while True:
