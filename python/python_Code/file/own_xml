@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf8'?>
+
+<member>
+    <name enrolled="yes">
+        <age checked="no">male</age>
+        <sex>20</sex>
+    </name>
+    <name enrolled="yes">
+        <age checked="no">male</age>
+        <sex>22</sex>
+    </name>
+    <name enrolled="yes">
+        <age checked="no">female</age>
+        <sex>30</sex>
+    </name>
+</member>

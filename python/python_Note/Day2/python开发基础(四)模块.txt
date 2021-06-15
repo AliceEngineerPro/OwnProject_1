@@ -1,0 +1,105 @@
+# 模块
+
+"""
+python标准库  直接 import 导入
+第三方模块  pip 下载 , import 导入
+程序自定义的模块库
+"""
+
+# 系统模块
+import time  # 时间
+import datetime  # 日期时间
+import random  # 随机模块
+import os  # 操作系统交互
+import sys  # 解释器交互
+import json  # json 信息
+import pickle  # 序列化, 反序列化
+import logging  # 日志文件
+import re  # 正则表达式, 字符串的匹配
+
+
+def time_module():
+    print(time.time())  # 时间戳(秒数) float 格式, 从1970-1-1-00.00.00开始算起, 到现在的走过的秒 1622619938
+    print(time.localtime())  # 结构化时间, 时间对象, 当前时区时间
+    print(time.gmtime())  # 时区为0的结构化时间 世界标准时间UTC
+    # 时间戳-->>结构化时间
+    print(time.localtime(time.time()))
+    # 结构化时间-->>时间戳
+    print(time.mktime(time.localtime()))
+    # 结构化时间-->>字符串时间
+    print(time.strftime('%Y-%m-%d %X', time.localtime()))  # '%Y(年)-%m(月)-%d(日) %X(时分秒)' , localtime 为结构化时间
+    # 字符串时间-->>结构化时间
+    print(time.strptime('2021:06:02:15:57:49', '%Y:%m:%d:%X'))
+    # 结构化时间-->>固定形式 '周 月 日 时 分 秒 年'
+    print(time.asctime())  # 默认为time.localtime
+    # 时间戳-->>固定形式 '周 月 日 时 分 秒 年'
+    print(time.ctime())  # 默认为time.time
+
+    massage = '\n↑↑↑以上为time模块\n'
+    return massage
+
+
+def data_time_module():
+    print(datetime.datetime.now())  # 显示当前时间 '年-月-日 时:分:秒'
+
+    massage = '\n↑↑↑以上为data time模块\n'
+    return massage
+
+
+def random_module():
+    list_num = []
+    for i in range(11):
+        list_num.append(i)
+    set_num = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    print(random.random())  # 默认随机生成 (0-1) 的 float
+    print(random.randint(1, 3))  # 随机生成 (1, 3) 的 int
+    print(random.randrange(1, 3))  # 随机生成 (1, 3] 的 int
+    print(random.choice(set_num))  # 随机生成 list, set等 里的一个元素
+    print(random.sample(list_num, 3))  # 随机生成 list, set等 中的多个元素, 以 list 的方式输出
+    print(random.uniform(1.5, 1.6))  # 随机生成 (1.5, 1.6) 中的一个 float
+    # 随机排列列表 ***只限于列表***
+    print('原列表', list_num)
+    random.shuffle(list_num)
+    print('执行random.shuffle后的列表', list_num)
+
+    massage = '\n↑↑↑以上为random模块\n'
+    return massage
+
+
+def os_module():
+
+    massage = '\n↑↑↑以上为os模块\n'
+    return massage
+
+
+# print(time_module())
+# print(data_time_module())
+# print(random_module())
+# print(os_module())
+
+
+
+
+
+
+
+
+
+
+# random 的应用 -->>随机生成验证码
+
+import random
+
+
+def random_code():
+    massage = ''
+    for i in range(6):
+        num = chr(random.randint(48, 57))  # 利用ASCII表
+        letter_big = chr(random.randint(65, 90))
+        letter_small = chr(random.randint(97, 122))
+        produce_massage = str(random.choice([num, letter_small, letter_big]))
+        massage += produce_massage
+    return massage
+
+
+print(random_code())
