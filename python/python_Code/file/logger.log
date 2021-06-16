@@ -1,0 +1,5 @@
+2021-06-15 19:35:15,831 1.py [352] :debug message
+2021-06-15 19:35:15,831 1.py [353] :info message
+2021-06-15 19:35:15,831 1.py [354] :warning message
+2021-06-15 19:35:15,831 1.py [355] :error message
+2021-06-15 19:35:15,831 1.py [356] :critical message
