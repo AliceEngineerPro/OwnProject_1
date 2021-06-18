@@ -83,7 +83,7 @@ def os_module():
     # os.remove()  # 删除一个文件
     # os.rename()  # 重命名一个文件
     # print(os.listdir())  # 获取当前工作目录的所有文件, 以列表方式输出
-    # print(os.stat('1.py'))  # 查看文件的信息
+    # print(os.stat('Test _obj.py'))  # 查看文件的信息
     # print(os.path.dirname(os.getcwd()))  # 返回上级目录
     # print(os.path.split(r'E:\my_project\VScodeNote\python'
     #                     r'\python_Code\pythonBasicPackageUse\code_module\os1.py'))  # 返回文件夹和文件

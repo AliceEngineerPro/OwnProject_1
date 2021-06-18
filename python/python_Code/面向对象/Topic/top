@@ -1,0 +1,8 @@
+class :
+    school_name
+    school_address
+    school_type
+
+make :
+
+考试,招生,开除学生

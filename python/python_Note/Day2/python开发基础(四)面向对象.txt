@@ -1,0 +1,461 @@
+# 面向对象
+# 类: 把一类事物的相同特征和动作整合到一起就是类
+# 对象: 就是基于类而创建的一个具体的事物
+
+# 面向对象设计
+people_1 = {
+    'name': 'Jack',
+    'gender': 'male',
+    'type': 'A male'
+}
+
+people_2 = {
+    'name': 'alex',
+    'gender': 'male',
+    'type': 'A male'
+}
+
+
+def dog(name, gender, dog_type):
+
+    def call(call_dog):
+        print('一条[%s],在汪汪汪' % call_dog['name'])
+
+    def eat(eat_dog):
+        print('一条[%s],在吃狗粮' % eat_dog['dog_type'])
+
+    dog1 = {
+        'name': name,
+        'gender': gender,
+        'dog_type': dog_type,
+        'call': call,
+        'eat': eat,
+    }
+
+    return dog1
+
+
+def work(people):
+    print('一个叫[%s]的人在工作' % people['name'])
+
+
+work(people_1)
+run_dog1 = dog('jack', 'male1', 'dog1')
+run_dog1['call'](run_dog1)
+run_dog2 = dog('alex', 'male2', 'dog2')
+run_dog2['eat'](run_dog2)
+
+
+
+# 面向对象编程
+
+
+class Dog:
+    def __init__(self, dog_name, dog_gender, dog_type):
+        self.name = dog_name
+        self.gender = dog_gender
+        self.type = dog_type
+
+    def wang(self):
+        print('一条名字为[%s]的[%s], 汪汪汪' % (self.name, self.type))
+
+    def yao_ren(self):
+        print('一条名字为[%s]的[%s], 在咬人' % (self.name, self.type))
+
+    def eat(self):
+        print('一条名字为[%s]的[%s], 在吃狗粮' % (self.name, self.type))
+
+
+dog1 = Dog('alex', 'female', 'dog')
+dog2 = Dog('alex1', 'female', 'dog')
+dog3 = Dog('alex2', 'female', 'dog')
+
+
+dog1.wang()
+dog3.yao_ren()
+dog2.eat()
+
+
+
+'''
+数据属性
+函数属性
+'''
+
+
+class Chinese:
+    # 数据属性
+    hello = '你好'
+
+    # 函数属性
+    def habit():
+        print('like money')
+
+    def other_habit(self):
+        print('other habit')
+
+
+# 方法调用
+
+# print(dir(Chinese))
+print(Chinese.hello)
+Chinese.habit()  # Chinese.__dict__['habit']()
+Chinese.other_habit(' ')
+# print(Chinese.__dict__)  # 查看类的属性字典
+
+# 实例化
+class Chinese:
+
+    def __init__(self, chinese_name, chinese_age, chinese_gender):
+        self.chinese_name = chinese_name
+        self.chinese_age = chinese_age
+        self.chinese_gender = chinese_gender
+
+    # 函数属性
+    def habit(self):
+        print('%s like money' % self.chinese_name)
+
+    def other_habit(self):
+        print('%s has other habit' % self.chinese_name)
+
+    def eat_foot(self, foot):
+        print('%s正在吃%s' % (self.chinese_name, foot))
+
+
+# 方法调用
+
+s_number1 = Chinese('jack', 18, 'male')
+# print(s_number1.chinese_name)  # print(s_number1.__dict__['chinese_name'])
+
+s_number1.habit()
+s_number1.other_habit()
+s_number1.eat_foot(foot='饺子')
+
+# 类属性的增删改查
+import time
+
+
+class Chinesepeople:
+
+    country = 'China'
+    person_type = '人'
+
+    def __init__(self, name):
+        self.name = name
+
+    def play_ball(self, ball):
+        print('%s正在玩%s' % (self.name, ball))
+
+    def eat_foot(self, foot):
+        print('%s正在吃%s' % (self.name, foot))
+
+
+# 查看类属性
+print(Chinesepeople.country)
+# 修改类属性
+Chinesepeople.country = 'CHINA'
+print(Chinesepeople.country)
+# 增加类属性
+Chinesepeople.time_now = time.asctime()
+# 删除类属性
+print(Chinesepeople.__dict__)
+del Chinesepeople.person_type
+print(Chinesepeople.__dict__)
+
+person1 = Chinesepeople('jack')
+person1.play_ball(ball='ball')
+print(person1.time_now)
+
+
+# 实例属性的增删改查
+class Chinese:
+
+    def __init__(self, name):
+        self.name = name
+
+    def play_ball(self, ball):
+        print('%s正在完%s' % (self.name, ball))
+
+
+person1 = Chinese('alex')
+
+# 查看
+print(person1.name)
+# 增加
+person1.age = 18
+print(person1.age)
+# 修改
+person1.age = 20
+print(person1.age)
+print(person1.__dict__)
+# 删除
+del person1.age
+print(person1.__dict__)
+
+# 全局数据类型变量
+country = '中国'
+
+
+class Chinese:
+
+    country = 'China'
+
+    def __init__(self, name):
+        self.name = name
+        print('>>>', country)
+
+    def play_ball(self, ball):
+        print('%s正在玩%s' % (self.name, ball))
+
+
+msg1 = Chinese('jack')
+print(msg1.country, msg1.name)
+msg1.play_ball('ball')
+
+
+# def shi_li_hua():
+#     name = input('请输入名字>>>:')
+#     ball = input("请输入动作>>>:")
+#     msg1 = Chinese(name)
+#
+#     return msg1.play_ball(ball)
+#
+#
+# shi_li_hua()
+
+
+# 实例属性
+
+class Chinese:
+
+    country = 'China'
+    eg_list = [1, 2]
+
+    def __init__(self, name, ball):
+        self.name = name
+        self.ball = ball
+
+    def play(self):
+        print('%s正在打%s' % (self.name, self.ball))
+
+
+msg1 = Chinese('jack', 'ball')
+msg1.country = 'JP'
+print(Chinese.country)
+print(msg1.country)
+
+msg1.eg_list = [1, 2, 3]
+print(Chinese.eg_list)
+print(msg1.eg_list)
+
+Chinese.country = 'jp'
+print(Chinese.country)
+print(msg1.country)
+
+
+
+# 静态属性
+class Room:
+
+    tag = 100
+
+    def __init__(self, name, owner, length, width, high):
+        self.name = name
+        self.owner = owner
+        self.length = length
+        self.width = width
+        self.high = high
+
+    @property
+    def cal_area(self):
+        msg1 = '%s 住的%s 的的面积为: %s ' % (self.owner, self.name, self.length * self.width)
+        area = self.length * self.width
+        return area
+
+    @property
+    def cal_volume(self):
+        msg1 = '%s 住的%s 的的体积为: %s ' % (self.owner, self.name, self.length * self.width * self.high)
+        volume = self.length * self.width * self.high
+        return volume
+
+    def test(self):
+        print('from test', self.name)
+
+    @classmethod  # 类方法
+    def tell_info(cls, num):
+        print(cls)
+        print(cls.tag, num)
+
+        pass
+
+
+r1 = Room('厕所', 'alex', 100, 100, 1000)
+r2 = Room('公共厕所', 'jack', 1, 1, 1)
+
+# print('%s住的%s的的面积为:%s ' % (r1.owner, r1.name, r1.length * r1.width))
+# print('%s住的%s的的面积为:%s ' % (r2.owner, r2.name, r2.length * r2.width))
+
+# 面积
+"""
+print(r1.cal_area)
+print(r2.cal_area)
+"""
+# 体积
+"""
+print(r1.cal_volume)
+print(r2.cal_volume)
+"""
+
+# print(Room.tag)
+
+Room.tell_info(10)
+
+
+# 静态方法
+
+class Room:
+
+    tag_msg = True
+
+    def __init__(self, name, owner, length, width, high):
+        self.name = name
+        self.owner = owner
+        self.length = length
+        self.width = width
+        self.high = high
+
+    @property
+    def cal_area(self):
+        return self.length * self.width
+
+    @property  # 和实例绑定
+    def cal_volume(self):
+        return self.length * self.width * self.high
+
+    @classmethod  # 和类绑定
+    def tell_info(cls):
+        return Room.tag_msg
+
+    @staticmethod  # 不绑定, 类的工具包
+    def lave(a, b, c):
+        print('%s %s %s正在洗澡' % (a, b, c))
+
+
+# print(Room.tell_info())
+
+Room.lave('a', 'b', 'c')
+
+
+# 组合
+
+class Hand:
+
+    pass
+
+
+class Foot:
+
+    pass
+
+
+class Head:
+
+    pass
+
+
+class Trunk:
+
+    pass
+
+
+class Person:
+
+    def __init__(self, id_num, name):
+        self.id_num = id_num
+        self.name = name
+        self.hand = Hand()
+        self.foot = Foot()
+        self.trunk = Trunk()
+        self.head = Head()
+
+
+p1 = Person('1xx1xx19xx0x1x12xx', 'alex')
+
+
+class School:
+
+    def __init__(self, school_name, school_address):
+        self.school_name = school_name
+        self.school_address = school_address
+
+    def admissions(self):
+        print('%s 正在招生' % self.school_name)
+
+
+class Course:
+
+    def __init__(self, course_name, course_price, course_period, course_school):
+        self.course_name = course_name
+        self.course_price = course_price
+        self.course_period = course_period
+        self.course_school = course_school
+
+
+# School
+s1 = School('清华大学', '北京五道口')
+s2 = School('南开大学', '天津八里台')
+# # Course
+# c1 = Course('linux', '100', '24h', )
+# c2 = Course('python', '100', '24h', s1)
+# c3 = Course('java', '100', '24h', s1)
+# c4 = Course('c语言', '100', '24h', s1)
+
+
+# 调用
+# print(c1.course_school.school_name)
+
+while True:
+    msg_school = {
+        '1': '清华大学',
+        '2': '南开大学',
+
+    }
+
+    menu_school = {
+        '1': s1,
+        '2': s2,
+
+    }
+
+    print('*' * 50, '\n', msg_school)
+    select_school = input('>>>:')
+    msg_new_school = menu_school[select_school]
+    print(msg_new_school.school_name, msg_new_school.school_address)
+
+    c1 = Course('linux', '100', '24h', msg_new_school)
+    c2 = Course('python', '100', '24h', msg_new_school)
+    c3 = Course('java', '100', '24h', msg_new_school)
+    c4 = Course('c语言', '100', '24h', msg_new_school)
+
+    msg_course = {
+        '1': 'linux',
+        '2': 'python',
+        '3': 'java',
+        '4': 'c语言'
+    }
+
+    menu_course = {
+        '1': c1,
+        '2': c2,
+        '3': c3,
+        '4': c4,
+
+    }
+
+    print('*' * 50, '\n', msg_course)
+    select_course = input('>>>:')
+    msg_new_course = menu_course[select_course]
+    print(msg_new_course.course_school.school_name, msg_new_course.course_name, msg_new_course.course_school.school_address)
+
+
+
