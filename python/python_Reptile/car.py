@@ -38,7 +38,7 @@ response.encoding = response.apparent_encoding
 soup = BeautifulSoup(response.text, features='html.parser')
 tag = soup.find(id='auto-channel-lazyload-article')
 li_list = tag.find_all('li')
-s_number = 139
+s_number = 0
 
 for i in li_list:
     a = i.find('a')
@@ -80,7 +80,7 @@ for i in li_list:
 
 
 
-# E:\#file\car
+        # E:\#file\car
 
 
 
