@@ -109,6 +109,3 @@ while True:
     msg_new_course = menu_course[select_course]
     print(msg_new_course.course_school.school_name, msg_new_course.course_name, msg_new_course.course_school.school_address)
 
-
-
-

@@ -33,8 +33,8 @@ class Room:
         pass
 
 
-r1 = Room('厕所', 'alex', 100, 100, 1000)
-r2 = Room('公共厕所', 'jack', 1, 1, 1)
+r1 = Room('room', 'alex', 100, 100, 1000)
+r2 = Room('room', 'jack', 1, 1, 1)
 
 # print('%s住的%s的的面积为:%s ' % (r1.owner, r1.name, r1.length * r1.width))
 # print('%s住的%s的的面积为:%s ' % (r2.owner, r2.name, r2.length * r2.width))

@@ -458,4 +458,171 @@ while True:
     print(msg_new_course.course_school.school_name, msg_new_course.course_name, msg_new_course.course_school.school_address)
 
 
+# 继承
+
+class Dad:
+
+    money = 100
+
+    def __init__(self, name):
+        print('Dad')
+        self.name = name
+
+    def hit(self):
+        print('%s在打儿子' % self.name)
+
+
+class Son(Dad):
+
+    money = 10000000
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def hit(self):
+        print('来自Class Son')
+
+
+d1 = Dad('Dad')
+
+s1 = Son('son', 20)
+s2 = Son('alex', 30)
+
+# print(Son.money)
+s2.hit()
+
+# d1.hit()
+
+# print(Son.money)
+#
+# print(s1)
+
+
+# 接口继承
+
+import abc  # 接口类
+
+
+class Allfile(metaclass=abc.ABCMeta):  # 父类接口继承原则
+    """
+    接口类
+    没必要写逻辑
+    不用实例化
+    只是为了规范子类
+    """
+
+    @abc.abstractmethod
+    def read(self):
+        print('All read')
+
+        pass
+
+    @abc.abstractmethod
+    def write(self):
+        print('All write')
+
+        pass
+
+
+class Disk(Allfile):
+
+    def read(self):
+        print('Disk read')
+
+    def write(self):
+        print('Disk write')
+
+    pass
+
+
+class Cd(Allfile):
+
+    def read(self):
+        print('Cd read')
+
+    def write(self):
+        print('Cd write')
+
+    pass
+
+
+class Mem(Allfile):
+
+    def read(self):
+        print('Mem read')
+
+    def write(self):
+        print('Mem write')
+
+    def other(self):
+        print('Mem other')
+
+    pass
+
+
+m1 = Mem()
+
+m1.read()
+m1.write()
+m1.other()
+
+
+# 继承顺序
+
+
+class A:
+
+    def print(self):
+        print('A')
+
+    pass
+
+
+class B(A):
+
+    def print(self):
+        print('B')
+
+    pass
+
+
+class C(A):
+
+    def print(self):
+        print('C')
+
+    pass
+
+
+class D(B):
+
+    def print(self):
+        print('D')
+
+    pass
+
+
+class E(C):
+
+    def print(self):
+        print('E')
+
+    pass
+
+
+class F(D, E):
+
+    def print(self):
+        print('F')
+
+    pass
+
+
+f1 = F()
+f1.print()
+
+print(F.__mro__)  # 继承类顺序
+
+
 
