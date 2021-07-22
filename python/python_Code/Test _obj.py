@@ -1,3 +1,4 @@
+# 弹药编码生成器
 
 def ammo():
     for_word = input('弹药前17位: ')
@@ -18,5 +19,26 @@ def ammo():
     return return_value
 
 
-while True:
-    print(ammo())
+if __name__ == '__main__':
+
+    msg = """
+    
+    1-->[弹药编号生成]
+    2-->[退出]
+    
+    """
+
+    msg_dome = {
+        1: ammo,
+
+    }
+
+    while True:
+        print(msg)
+        in_num = int(input('请输入功能编号>>>'))
+        if not in_num:
+            continue
+        if in_num == 2:
+            break
+        if in_num == 1:
+            print(msg_dome[in_num]())
