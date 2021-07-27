@@ -1,0 +1,5 @@
+多表查询
+    连接查询
+        内连接: inner join
+        外连接: left join  right join
+        全连接: full join
