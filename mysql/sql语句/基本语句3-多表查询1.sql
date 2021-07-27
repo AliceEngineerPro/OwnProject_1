@@ -37,7 +37,7 @@ select * from class_teachers ;
 # 查询子表
 select * from class_students ;
 
-# 创建外键
+# 创建外键(在子表中创建)
 drop table class_students;
 show tables ;
 
@@ -71,9 +71,19 @@ show create table class_students2 ;
 alter table class_students2 drop foreign key teacher_id ;
 show create table class_students2 ;
 
+# 连级删除
+/*
+    foreign key (子表字段) references + 主表(主表字段) on delete cascade
+    -- 删除连级
+    alter table + 表名 drop foreign key + 外键名
+    -- 连接删除后子表对应字段为Null ,子表的外键不能设置not null
+    alter table + 表名 add constraint + 外键名 foreign key (子表字段) references + 主表(主表字段)
+
+*/
+
 select * from class_students, class_teachers ;
 select * from class_teachers, class_students ;
 
 select * from class_teachers, class_students where class_teachers.id=class_students.teacher_id ;
 select * from class_students,class_teachers where class_students.teacher_id=class_teachers.id ;
-select class_students.name, class_teachers.name from class_students,class_teachers where class_students.teacher_id=class_teachers.id ;
+select class_students.name, class_teachers.name from class_students,class_teachers where class_students.teacher_id=class_teachers.id and class_students.name='学生3';
