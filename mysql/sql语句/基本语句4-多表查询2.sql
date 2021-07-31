@@ -72,3 +72,5 @@ select employee.id, employee.emp_name, department.dept_name from department left
 select employee.id ,employee.emp_name, department.dept_name from employee right join department on employee.dept_id=department.dept_id ;
 
 select employee.emp_name from employee ,department where employee.dept_id = department.dept_id and department.dept_name = '技术部' ;
+
+# 子查询 select * from + 表名 in (子语句)

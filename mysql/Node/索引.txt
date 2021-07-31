@@ -1,0 +1,13 @@
+索引语法
+
+索引可以提高数据的查询率
+
+创建表时:
+create table 表(
+    字段1 数据类型 [约束] ,
+    字段2 数据类型 [约束] ,
+    [ unique | fulltext | spatial ] index 索引名 (字段明)
+)
+
+#  创建索引:
+alter table 表 add index 索引名 表名(字段名) ;
