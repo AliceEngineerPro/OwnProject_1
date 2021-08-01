@@ -1,3 +1,4 @@
+# 多态
 class H2o:
     def __init__(self, status, c):
         self.status = status
