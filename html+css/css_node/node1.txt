@@ -1,4 +1,4 @@
-css
+css_node
 1.css的引入
     直接引入:
         <div style="color: red; background-color: beige">hello world</div>
@@ -25,16 +25,107 @@ css
             <a href="https://www.baidu.com">百度</a>
         </body>
 
-    文件引入(连接式
+    文件引入(连接式)
+        <link rel="stylesheet" href="css_code1.css" >
 
     导入式
         <head>
             <style>
-                @import "";
+                @import "css_code1.css";
             </style>
         </head>
 
 
-
-
 2.css选择器
+    全局选择
+        <head>
+            <style>
+                *{
+                color = red ;
+                }
+            </style>
+        </head>
+
+    标签选择
+        <head>
+            <style>
+                div{
+
+                }
+            </style>
+        </head>
+
+    ID选择
+        <head>
+            <style>
+                #ID{
+
+                }
+            </style>
+        </head>
+
+    class选择
+        <head>
+            <style>
+                .class{
+
+                }
+            </style>
+        </head>
+
+3,组合选择器
+    多元选择器
+        <head>
+            <style>
+                div, p{
+
+                }
+            </style>
+        </head>
+
+    后代选择器
+        <head>
+            <style>
+                .class div{
+
+                }
+            </style>
+        <head>
+
+    子元素选择器
+        <head>
+            <style>
+                div>p{
+
+                }
+            </style>
+        </head>
+
+    毗邻元素选择器
+        <head>
+            <style>
+                .class + div{
+
+                }
+            </style>
+        </head>
+
+
+4,css属性选择器 **ss
+    E[att]:匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如“[cheacked]”。以下同。）
+        p[title] { color:#f00; }
+
+    E[att=val]:匹配所有att属性等于“val”的E元素
+        div[class=”error”] { color:#f00; }
+
+    E[att~=val]:匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素
+        td[class~=”name”] { color:#f00; }
+
+    E[attr^=val]:匹配属性值以指定值开头的每个元素
+        div[class^="test"]{background:#ffff00;}
+
+    E[attr$=val]:匹配属性值以指定值结尾的每个元素
+        div[class$="test"]{background:#ffff00;}
+
+    E[attr*=val]:匹配属性值中包含指定值的每个元素
+        div[class*="test"]{background:#ffff00;}

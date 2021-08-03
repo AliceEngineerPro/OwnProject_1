@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style>
+        /**{*/
+        /*    color: red;*/
+        /*}*/
+        #p1 {
+            background-color: aqua;
+        }
+        .p{
+            color: blue;
+        }
+        div.div{
+            color: aquamarine;
+        }
+
+        .p, div.div{
+            background-color: brown;
+        }
+
+        .div1>.div2{
+            color: red;
+        }
+
+        /*.div2 div{*/
+        /*    color: brown;*/
+        /*}*/
+
+        .div1 + div{
+            background-color: green;
+        }
+
+        /*属性选择器*/
+        [jack]{
+            color: red;
+        }
+
+        [jack=p]{
+            font-family: "Times New Roman";
+            color: blue;
+        }
+        p[jack=p]{
+            color: brown;
+        }
+
+        [jack~=J]{
+            color: fuchsia;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="div">hello world</div>
+<div class="div">hello div</div>
+
+<p id="p1">p</p>
+<p id="p2">pp</p>
+<p class="p">ppp</p>
+<p class="p">pppp</p>
+
+<a href="">aaaaaaa</a>
+
+<div class="div1">
+    <h1>一级div</h1>
+    <div class="div2">
+        <h2>二级div</h2>
+        <div class="div3">
+            <h3>三级div</h3>
+            <a href="https://www.google.com">Google Chrome</a>
+            <p>点击使用Google浏览器</p>
+        </div>
+    </div>
+</div>
+
+<span><a href="https://www.google.com"></a></span>
+
+
+<div>after div1</div>
+<p>after div1 p</p>
+
+<h1>属性选择器</h1>
+<div jack="people J">jack</div>
+<div jack="p">jack1</div>
+<p jack="p">jack2</p>
+
+
+<div class="div3 div4">hello div</div>
+
+</body>
+</html>
