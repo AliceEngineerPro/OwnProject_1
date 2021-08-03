@@ -1,0 +1,6 @@
+{
+  "username": ["jack"],
+  "passwd": ["123"],
+  "hobby": ["0", "1"],
+  "gender": ["1"]
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from标签</title>
+</head>
+<body>
+
+<h1>注册页面</h1>
+
+<!--action:后端接口
+    method:http类型
+    enctype:文件上传-->
+<form action="http://127.0.0.1:8088/index" method="post" enctype="multipart/form-data">
+
+    <!--name属性input标签是必要的,placeholder:表示输入框内提示字符
+        readonly属性是只读; disable属性是禁用(对所有input标签都适用)-->
+    <p><label for="姓名">姓名: <input type="text" name="username" id="姓名" placeholder="姓名"></label></p>
+
+    <!--passwd所输入的内容是不可见的-->
+    <p><label for="密码">密码: <input type="password" name="passwd" id="密码" placeholder="密码"></label></p>
+
+    <!--checkbox:多选框; name, value属性是传给后端的键值对; checked属性是默认勾选多选框-->
+    <p><label>爱好:
+        <label for="音乐">音乐 <input type="checkbox" name="hobby" id="音乐" value="0" checked></label>
+        <label for="电影">电影 <input type="checkbox" name="hobby" id="电影" value="1"></label>
+    </label>
+    </p>
+
+    <!--radio:单选框-->
+    <p><label >性别:
+        <label for="男">男 <input type="radio" name="gender" id="男" value="1"></label>
+        <label for="女">女 <input type="radio" name="gender" id="女" value="2"></label>
+    </label>
+    </p>
+
+    <!--file:提交文件-->
+    <p><input type="file" name="push_file"></p>
+
+    <!--select:下拉菜单; multiple属性表示展示; size属性表示展示几个选项
+        option:选项
+        传给后端:select的name属性 + option的value属性-->
+    <p><label>省份:
+            <select name="province">
+
+                <option value="1" selected>北京市</option>
+                <option value="2">天津市</option>
+                <!--<option value="3">河北省</option>-->
+                <optgroup label="河北省">
+                    <option value="1">石家庄市</option>
+                    <option value="2">唐山市</option>
+
+                </optgroup>
+
+            </select>
+        </label>
+    </p>
+
+    <p><label for="">简介:
+        </label><textarea name="desc" id="" cols="30" rows="10"></textarea>
+    </p>
+
+
+    <p><input type="reset" value="重置"></p>
+    <p><input type="submit" value="提交注册"></p>
+    <p><input type="button" value="提交按钮"></p>
+
+</form>
+
+
+
+</body>
+</html>

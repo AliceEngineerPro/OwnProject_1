@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--table:表格;
+    border:加内外边框;
+    cellpadding:内边框;
+    cellspacing:外边框-->
+<table border="1px" cellpadding="50px", cellspacing="5px">
+    <!--表格头-->
+    <thead>
+    <!--tr: 行-->
+    <tr>
+        <!--th:行头-->
+        <th>11</th>
+        <th>22</th>
+        <th>33</th>
+    </tr>
+    </thead>
+
+    <!--表格体-->
+    <tbody>
+        <tr>
+            <!--rowspan:占用几个格(合并单元格)-->
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td colspan="2">5</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

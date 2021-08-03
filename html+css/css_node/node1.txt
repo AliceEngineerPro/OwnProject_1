@@ -1,0 +1,40 @@
+css
+1.css的引入
+    直接引入:
+        <div style="color: red; background-color: beige">hello world</div>
+
+    head标签内style标签
+        <head>
+            <style>
+
+            p{
+                color: red;
+                font-size: 40px;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            </style>
+        </head>
+
+        <body>
+            <p>hello world</p>
+
+            <a href="https://www.baidu.com">百度</a>
+        </body>
+
+    文件引入(连接式
+
+    导入式
+        <head>
+            <style>
+                @import "";
+            </style>
+        </head>
+
+
+
+
+2.css选择器
