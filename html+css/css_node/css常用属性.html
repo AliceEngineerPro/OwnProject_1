@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>css常用属性</title>
+    <style>
+        /*背景属性*/
+        .pic{
+            /*添加边框*/
+            border: red solid 1px;
+            /*宽度*/
+            width: 1080px;
+            /*高度*/
+            height: 1620px;
+            /*图片背景地址*/
+            background-image: url("https://pic.amfc.ltd/Amfc/file/photo/pic1.jpg");
+            /*图片像素设置超过了图片, 显示1张图片, 样式不会平铺*/
+            background-repeat: no-repeat;
+            /*图片像素设置超过了图片, 横向平铺*/
+            /*background-repeat: repeat-x;*/
+            /*图片位置, 2个参数(行开始的位置 ,列开始的位置)*/
+            background-position: center center;
+        }
+        /*文本属性*/
+        .text{
+            /*高度(标签高度)*/
+            height: 100px;
+            /*背景颜色*/
+            background-color: aqua;
+            /*横向排列(居中)*/
+            text-align: center;
+            /*字体高度*/
+            /*line-height: 100px;*/
+            /*字符间距*/
+            letter-spacing: 10px;
+            /*首行缩进*/
+            text-indent: 20px;
+            /*单词与单词的距离(英文可显示)*/
+            word-spacing: 50px;
+            /*单词首字母大写*/
+            text-transform: capitalize;
+        }
+        /*边框属性*/
+        .rim{
+            /*宽*/
+            width: 200px;
+            /*高*/
+            height: 200px;
+            /*边框粗细,线条类型,线条颜色*/
+            /*border: 1px solid red;*/
+            border-width: 3px;
+            border-style: solid;
+            border-color: red;
+            /*边框线条颜色,上下左右*/
+            border-top-color: yellow;
+            border-bottom-color: blueviolet;
+            border-left-color: aqua;
+            border-right-color: green;
+
+        }
+        /*列表属性*/
+        .list{
+            /*序号样式属性*/
+            list-style: square;
+        }
+        /*display*/
+        div,p,span,a{
+            width: 50px;
+            height: 50px;
+        }
+        div{
+            background-color: red;
+            display: inline;
+        }
+        p,span{
+            background-color: yellow;
+            display: inline-block;
+        }
+        a{
+            background-color: blue;
+            display: inline-block;
+        }
+        .out{
+            word-spacing: -5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>css常用属性</h1>
+
+<h2>1 颜色属性</h2>
+    <div style="color: red"></div>
+    <div style="color: #ff0000"></div>
+    <div style="color: rgb(255,0,0)"></div>
+    <div style="color: rgba(255,0,0,0.5)"></div>
+
+<h2>2 字体属性</h2>
+    <p>字体大小</p>
+    <div style="font-size: 20px"></div>
+    <div style="font-size: 50%"></div>
+    <div style="font-size: larger"></div>
+
+    <p>字体</p>
+    <div style="font-family: 'Lucida Bright',serif"></div>
+
+    <p>字体粗细</p>
+    <div style="font-weight: lighter"></div>
+
+    <p>斜体</p>
+    <div style="font-style: oblique"></div>
+
+<h3>背景属性</h3>
+    <p class="pic">背景属性</p>
+
+<h3>文本属性</h3>
+    <div class="text">texttexttexttexttexttext</div>
+    <p>属性介绍</p>
+    <div>hello world</div>
+
+<h3>边框属性</h3>
+    <div class="rim"></div>
+
+<h3>列表标签</h3>
+    <p>有序列表</p>
+    <ol class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <p>无序列表</p>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+<h3>display</h3>
+
+<div>div</div>
+
+<p>p</p>
+
+<div class="out">
+    <span>span</span>
+    <a href="#">a</a>
+</div>
+
+
+</body>
+</html>
+
+
