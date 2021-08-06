@@ -1,0 +1,74 @@
+.head{
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2459a2;
+}
+.logo_ico{
+    display: inline-block;
+    background-image: url("https://pic.amfc.ltd/Amfc/file/ico/01.ico");
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: 4px;
+    /*padding: 0 1px 0;*/
+}
+.head_top{
+    width: 80%;
+    height: 40px;
+    background-color: red;
+    line-height: 40px;
+    margin: 0 auto;
+}
+.menu_top{
+    float: left;
+}
+.head_top .menu_top a.tb{
+    display: inline-block;
+    margin-left: -3px;
+    padding: 0 16px 0 13px;
+    color: gray;
+    border: 1px seagreen solid;
+
+}
+.head_top .menu_top a.tb:hover{
+    color: white;
+    background-color: #396bb3;
+}
+.head_top .menu_top a.area, .head_top .menu_top a.tb:hover{
+    color: white;
+    background-color: #204982;
+}
+.search{
+    /*float: left;*/
+    float: right;
+    margin-top: 5px;
+}
+.search .search_txt{
+    float: left;
+    height: 24px;
+    width: 100px;
+    padding: 2px 2px 2px 5px;
+}
+.log_div_in{
+    display: inline-block;
+    float: right;
+}
+.search a{
+    display: inline-block;
+    width: 24px;
+    height: 27px;
+    background-color: #f4f4f4;
+    padding: 2px 2px 2px 5px;
+}
+.search.a.search_ico{
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+    background: url("https://pic.amfc.ltd/Amfc/file/ico/01.ico") no-repeat 0 -150px;
+    border: 1px red solid;
+    margin-left: 10px;
+}
+
