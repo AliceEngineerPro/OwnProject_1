@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>hello 1</p>
+<p>hello 2</p>
+<p>hello 3</p>
+<p>hello 4</p>
+<div>
+    div
+</div>
+<script>
+    // var attr = [11,22,33]
+    // for (var i = 0; i<attr,length; i++) {
+    //     document.write(i + ':');
+    //     document.write(attr[i] + '<br>')
+    //}
+
+    var eles_p=document.getElementsByTagName('p')
+    // console.log(eles_p)
+    // for (i in eles_p){
+    //     console.log(i)
+    // }
+    // for (var i = 0; i <eles_p.length; i++){
+    //     console.log(i)
+    //     console.log(eles_p[i])
+    // }
+    // function sName() {
+    //     let hellostr;
+    //     const myname = prompt("请问您贵姓？", "李");
+    //     hellostr="您好，"+myname+'先生，欢迎进入"探索之旅"！';
+    //     alert(hellostr);
+    //     document.write(hellostr);
+    // }
+    // sName()
+
+    var x = 0;
+    var i = 1;
+    while (i<=100){
+        x += i;
+        i++;
+    }
+    console.log(x)
+
+    for (i;i<=100;i++){
+        x += i
+    }
+    console.log(x)
+
+    try {
+        // console.log(123);
+        // throw Error('define error');
+    }
+    catch (e) {
+        alert(e);
+    }
+    finally {
+        console.log('finally');
+    }
+</script>
+</body>
+</html>
