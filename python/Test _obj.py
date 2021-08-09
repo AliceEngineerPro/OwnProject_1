@@ -1,4 +1,3 @@
-
 def px():
     width = int(input('长(px)-->').strip())
     height = int(input('高(px)-->').strip())
@@ -18,7 +17,7 @@ def sum_input():
     msg = '结果为:'
     if start >= 0 and stop >= 0:
         s = 0
-        for i in range(start-1, stop):
+        for i in range(start - 1, stop):
             i += 1
             s += i
         return msg + '%s' % s
@@ -30,5 +29,6 @@ def sum_input():
         return return_value
 
 
-print(sum_input())
+# print(sum_input())
+
 

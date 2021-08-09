@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="f()"></button>
+
+<script>
+    // windows对象
+
+    // alert-->提示框
+    // alert('hello world');
+
+    // confirm-->选择框
+    // var ret = confirm('hello world')
+    // console.log(ret)  // 查看ret的返回值
+    // // 条件判断
+    // if (ret === true){
+    //     alert('你选择的是:是');
+    // }
+    // else {
+    //     alert('你选择的是:否');
+    // }
+
+    // prompt->输入框
+    // var ret2 = prompt('hello...');
+    // console.log(ret2);  // 返回值为输入的内容,取消返回null
+
+    // open--打开
+    // open('https://baidu.com');
+
+    // close-->关闭
+    // close();
+
+    // location.assign('https://baidu.com')  //跳转
+    function f() {
+        // location.reload()  // 刷新
+        location.replace('https://baidu.com')  // 覆盖
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #count_1{
+            width: 800px;
+            height: 200px;
+            font-size: 70px;
+        }
+        #button_1{
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<label for="count_1"></label><input type="text" name="count_time" id="count_1" onclick="begin()"><br>
+<button id="button_1" onclick="end()">停止</button><br>
+
+<!--<div onclick="f()">click</div>-->
+
+
+<script>
+    var clock1;
+    function begin() {
+        if (clock1===undefined){
+            show_time();
+            clock1 = setInterval(show_time,1000);
+        }
+    }
+
+    function show_time() {
+        var data = new Date().toLocaleString();
+        var ele = document.getElementById('count_1');
+        ele.value = data;
+    }
+
+    function end(){
+        clearInterval(clock1);
+        clock1=undefined;
+    }
+
+    function f() {
+        console.log('hello...');
+    }
+    var c = setTimeout(f,1000);
+    clearTimeout(c);
+
+</script>
+</body>
+</html>
