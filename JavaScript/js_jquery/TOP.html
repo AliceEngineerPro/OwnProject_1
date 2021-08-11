@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            height: auto;
+            width: auto;
+        }
+        .menu{
+            float: left;
+            background-color: #336699;
+            width: 30%;
+        }
+        .content{
+            height: 500px;
+            float: left;
+            background-color: #84a42b;
+            width: 70%;
+        }
+        .title{
+            background-color: #e67e22;
+            line-height: 40px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="menu">
+        <div class="item">
+            <div class="title" onclick="show(this)">菜单一</div>
+            <div class="con">
+                <div>111</div>
+                <div>111</div>
+                <div>111</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="show(this)">菜单二</div>
+            <div class="con hide">
+                <div>111</div>
+                <div>111</div>
+                <div>111</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="show(this)">菜单三</div>
+            <div class="con hide">
+                <div>111</div>
+                <div>111</div>
+                <div>111</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="content"></div>
+
+</div>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    function show() {
+        
+    }
+</script>
+
+</body>
+</html>

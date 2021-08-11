@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="province">
+    <option value="">请选择省份</option>
+</select>
+<select id="city">
+    <option value="">请选择城市</option>
+</select>
+
+<script>
+    //  数据结构
+    data = {
+        '河北省':['石家庄','邯郸'],
+        '山西省':['太原','运城'],
+        '陕西省':['西安','延安']
+    };
+
+    //  数据类型初始化
+    var pro_ele = document.getElementById('province');
+    var ct_ele = document.getElementById('city');
+
+    //  添加数据
+    for (var i in data){  //  遍历数据
+        var ele = document.createElement('option');
+        ele.innerHTML = i  // 遍历数据字典中的key
+        pro_ele.appendChild(ele)
+    }
+    pro_ele.onchange = function () {
+        console.log(this.selectedIndex);
+        console.log(this.options[this.selectedIndex]);
+        var city = data[this.options[this.selectedIndex].innerHTML];
+
+        ct_ele.options.length = 1;
+
+        for (var i = 0; i < city.length; i++){
+            var ele = document.createElement('option');
+            ele.innerHTML = city[i];
+            ct_ele.appendChild(ele)
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -7,9 +7,56 @@
 </head>
 <body>
 <div class="div">hello</div>
+<a href="#">click</a>
+<p id="p1" p="pp">pp</p>
+<p id="p2" p="ppp">ppp</p>
 
+<div class="outer">
+    outer
+    <div class="inner">
+        inner
+        <p>inner p</p>
+    </div>
+    <p>son1</p>
+</div>
+<p>xialv</p>
+<div class="outer2">outer2</div>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+<input type="text" name="同意" id="">
 <script>
-    $(".div").css("color","red")
+    /*选择器*/
+
+    // 基本选择器
+    // $(".div").css("color","#ff0000")
+    // $('*').css('color','#ff0000')
+    // $('#p1').css('color','#ff0000')
+
+    // 层级选择器
+    // $('.outer p').css('color','#ff0000')
+    // $('.outer>p').css('color','#ff0000')
+
+    // 基本筛选器
+    // $('ul li:eq(2)').css('color','#ff0000')
+
+    // 属性选择器
+    // $("[p='pp']").css('color','#ff0000')
+    // $("[type='text']").css('width','300px')
+
+    //表单选择器
+    // $(':text').css('height','200px')
+
+    /*筛选器*/
+
+    // 过滤筛选器
+    // $('li').eq(2).css('color','#ff0000')
+
+    // 查找筛选器
+
 </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="username"></label><input type="text" name="用户名" id="username" value="请输入用户名" onfocusin="f()" onblur="f1()">
+
+
+<script>
+    var ele = document.getElementById('username');
+    function f() {
+        if (ele.value === '请输入用户名'){
+            ele.value = '';
+        }
+
+    }
+    function f1() {
+        if (!ele.value.trim())
+        ele.value = '请输入用户名';
+    }
+</script>
+</body>
+</html>

@@ -9,6 +9,7 @@ import time
 def showtime(request):
 
     now_time = time.asctime()
+
     # return HttpResponse('hello')
 
     return render(request, "index.html", {'now_time': now_time})
