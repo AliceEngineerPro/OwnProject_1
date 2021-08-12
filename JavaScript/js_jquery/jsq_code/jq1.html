@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="div1" con="c1"></div>
+<input type="checkbox" checked>是否可见
+<input type="checkbox">是否可见
+<input type="text" value="123">
+
+<div value="456"></div>
+<div id="id1">
+    div
+    <p>ppp</p>
+</div>
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script>
+    // console.log($(':checkbox:first').attr('checked'));
+    // console.log($(':checkbox:last').attr('checked'));
+    // console.log($('#id1').html());
+    // console.log($('#id1').text());
+    // console.log($('#id1').html('<h1>hello</h1>'));
+    // console.log($('#id1').text('<h1>hello</h1>'));
+    // console.log($(':text').val());
+    // console.log($('.text').next().val())
+
+    // 遍历
+    arr = [11,22,33,44];
+    // for (var i = 0; i < arr.length; i++){
+    //     $('p').eq(i).html(arr[i]);
+    // }
+    $.each(arr,function (x,y) {
+        console.log(x);
+        console.log(y);
+    });
+    $('p').each(function () {
+        console.log($(this));
+        $(this).html('hello');
+    })
+</script>
+</body>
+</html>

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea044a7-d6e6-4e22-8880-86a27d8774c1" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../JavaScript/js_/js_code/DOM.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JavaScript/js_/js_code/DOM事件/DOM事件.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../JavaScript/js_/js_code/BOM&amp;DOM.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JavaScript/js_/js_code/BOM&amp;DOM.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_code/导入jquery.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_code/导入jquery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_code/jq1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_code/jq正反选.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../JavaScript/js_jquery/TOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JavaScript/js_jquery/TOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_node/jQuery1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JavaScript/js_jquery/jsq_node/jQuery1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +68,7 @@
       <workItem from="1627913769774" duration="2902000" />
       <workItem from="1627964836285" duration="8000" />
       <workItem from="1628657206428" duration="31000" />
+      <workItem from="1628777421667" duration="55000" />
     </task>
     <servers />
   </component>

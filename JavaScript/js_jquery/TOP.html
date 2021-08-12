@@ -63,8 +63,9 @@
 
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script>
-    function show() {
-        
+    function show(self) {
+        $(self).next().removeClass('hide');
+        $(self).parent().siblings().children('.con').addClass('hide')
     }
 </script>
 
