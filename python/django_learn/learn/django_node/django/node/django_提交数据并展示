@@ -1,0 +1,73 @@
+# django_提交数据并展示
+
+- index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>创建个人信息</h1>
+
+<form action="/userInfor/" method="post">
+
+    <p>姓名<input type="text" name="username"></p>
+    <p>性别<input type="text" name="sex"></p>
+    <p>邮箱<input type="text" name="email"></p>
+    <p><input type="submit" value="submit"></p>
+
+</form>
+
+<hr>
+
+<h1>信息展示</h1>
+
+<table border="1">
+
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>邮箱</td>
+    </tr>
+    {% for i in info_list %}
+
+        <tr>
+            <td>{{ i.username }}</td>
+            <td>{{ i.sex }}</td>
+            <td>{{ i.email }}</td>
+        </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+```
+
+- url.py
+
+```python
+url(r'^userInfor/', views.userInfor)
+```
+
+- views.py
+
+```python
+info_list=[]
+
+def userInfor(req):
+
+    if req.method=="POST":
+        username=req.POST.get("username",None)
+        sex=req.POST.get("sex",None)
+        email=req.POST.get("email",None)
+
+        info={"username":username,"sex":sex,"email":email}
+        info_list.append(info)
+
+    return render(req,"userInfor.html",{"info_list":info_list})
+```
