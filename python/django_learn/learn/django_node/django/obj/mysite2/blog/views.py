@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 import time
 
@@ -6,10 +6,47 @@ import time
 # Create your views here.
 
 
-def showtime(request):
+def home(request):
 
+    name = 'Jack'
     now_time = time.asctime()
 
     # return HttpResponse('hello')
 
-    return render(request, "index.html", {'now_time': now_time})
+    # return render(request, "index.html", {'now_time': now_time, 'name': name})
+    return render(request, "index.html", locals())
+
+
+def article_find(request, year):
+    return HttpResponse('%s-' % year)
+
+
+def article_ymd(request, year, month, day):
+    return HttpResponse('%s-%s-%s' % (year, month, day))
+
+
+def signin(request):
+    # print(request.path)  # 源路径
+    # print(request.get_full_path())  # 带有数据的路径
+    if request.method == 'POST':
+        msg = request.POST
+        get_name = msg.get('name')
+        if get_name == 'jack':
+            return render(request, 'my_home.html', locals())
+
+        return HttpResponse('注册成功')
+
+    return render(request, 'signin.html')
+
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    name = request.GET.get('username')
+    return render(request, 'my_home.html', locals())
+    # return HttpResponse('登陆成功')
+
+
+# def my_home(request, name):
+
+

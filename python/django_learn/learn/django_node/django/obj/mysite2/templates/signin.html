@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>学生注册</title>
+    <title>signin</title>
 </head>
 <body>
 <h1>学生注册</h1>
-<form action="{% url 'login' %}" method="post">
-    <p><label>姓名<input type="text" name="user"></label></p>
-    <p><label>年龄<input type="text" name="age"></label></p>
+<form action="{% url 'signin' %}" method="post">
+    <p><label>姓名<input type="text" name="name"></label></p>
+    <p><label>用户名<input type="text" name="username"></label></p>
+    <p><label>密码<input type="password" name="passwd"></label></p>
     <p><label>爱好
         <input type="checkbox" name="hobby" value="0">篮球
         <input type="checkbox" name="hobby" value="1">足球

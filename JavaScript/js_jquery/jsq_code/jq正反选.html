@@ -32,7 +32,9 @@
 </table>
 <script>
     function select() {
-        $(':checkbox').each()
+        $(':checkbox').each(function () {
+            $(this).prop('checked',true)
+        })
     }
 </script>
 </body>

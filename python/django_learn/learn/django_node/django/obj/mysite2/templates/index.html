@@ -1,21 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
-{#     <script src="../node_modules/jquery/dist/jquery.js"></script>#}
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{#        <script src="static/jquery.js"></script>  通过settings.py配置文件引入jquery  不建议#}
-    <script src="{% static 'jquery.js' %}"></script>
-    <title>index_1</title>
+    <title>Welcome You Home!</title>
+    <style>
+        *{
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+    </style>
+    {% load static %}
+    <link rel="icon" href="{% static '01.ico' %}">
 </head>
 <body>
-<h1>hello</h1>
-<p id="time" oncancel="f()">{{ now_time }}</p>
+{#<h1>{{ request.method }}</h1>#}
+<h1>hello {{ name }}</h1>
+<div id="div_time">{{ now_time }}</div>
+<a href="{% url 'signin' %}" id="url_1">点击注册</a>
+<a href="{% url 'login' %}" id="url_1">点击登陆</a>
+<script src="{% static 'jquery.js' %}"></script>
 <script>
-    $('p').css('color','#ff0000')
+    $('#div_time').css('color','#ff0000')
 </script>
 </body>
 </html>

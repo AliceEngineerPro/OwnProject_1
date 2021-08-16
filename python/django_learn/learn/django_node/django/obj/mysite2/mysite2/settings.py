@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',  # CSRF跨域
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -55,7 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [],
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],  # templates的存放路径
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,6 +64,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            # 新添加
+            'builtins':[
+                'django.templatetags.static',
+            ]
         },
     },
 ]
@@ -121,12 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'  # 别名
 
 # 真实路径
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../node_modules/jquery/dist'),
-    # os.path.join(BASE_DIR, '../blog/static'),
-)
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, '../blog/static'))
-# STATICFILES_DIRS = [
-#     # (os.path.join(BASE_DIR, '../node_modules/jquery/dist')),
-#     (os.path.join(BASE_DIR, '../blog/static'))
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'node_modules/jquery/dist',  # jquery模块
+    BASE_DIR / 'blog/static',  # blog静态文件
+
+]

@@ -15,12 +15,18 @@ Including another URConf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from blog import views
+
+root_dir = views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('showtime/', views.showtime),
-    url('', views.showtime),
+    url('home/', views.home),
+    url('^blog/', include('blog.urls')),
+    url('^login/', views.login, name='login'),
+    # url('own/(?P<name>^[a-zA-Z0-9_-]{1,12})/', views.my_home, name='own'),
+    # url('own/(?P<name>jack)', views.my_home, name='own'),
+    # url('', admin),
 
 ]
