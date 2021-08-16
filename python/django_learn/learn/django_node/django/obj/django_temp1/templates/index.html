@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <style>
+        hr{
+            color: #ff0000;
+        }
+        .first{
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<h3>list</h3>
+<div>hello {{ l.1 }}</div>
+<hr>
+
+<h3>dict</h3>
+<div>{{ d.name }}</div>
+<div>{{ d.age }}</div>
+<div>{{ d.hobby }}</div>
+<hr>
+
+<h3>class</h3>
+<div>{{ c.name }}</div>
+<div>{{ c.sex }}</div>
+<hr>
+
+<h3>test</h3>
+<div>{{ test|capfirst }}</div>
+<div>{{ test|cut:'' }}</div>
+<hr>
+
+<h3>int</h3>
+<div>{{ d.age|add:num }}</div>
+<hr>
+
+<h3>datetime</h3>
+<div>{{ t|date:'Y-m-d' }}</div>
+<hr>
+
+<h3>null list</h3>
+<div>{{ null|default:'空' }}</div>
+<hr>
+
+<h3>a标签</h3>
+<div>{{ a|safe }}</div>
+<hr>
+
+{% autoescape off %}
+    <div>{{ a }}</div>
+{% endautoescape %}
+<hr>
+
+<h3>控制语句</h3>
+<h4>if循环</h4>
+{% if d.age > 20 %}
+    {% if d.age < 50 %}
+        <div>{{ d.name }}的年龄大于20小于50</div>
+    {% else %}
+        <div>hello {{ d.name }}</div>
+    {% endif %}
+{% elif d.age > 10 %}
+    <div>{{ d.name }}的年龄大于10小于20</div>
+{% else %}
+    <div>{{ d.name }}的年龄小于10</div>
+{% endif %}
+
+<h4>for循环</h4>
+{% for name in l %}
+{#    <div>{{ forloop.counter0 }}:{{ name }}</div><br>#}
+    <div>{{ forloop.revcounter0 }}:{{ name }}</div>
+{% endfor %}
+
+{% for name in l %}
+    {% if forloop.first %}
+        <div class="first">
+    {% else %}
+        <div>
+    {% endif %}
+    {{ name }}
+</div></div>
+    {% empty %}
+    <div>空</div>
+{% endfor %}
+<br>
+
+<form action="{% url 'login' %}" method="post">
+    <label>用户名<input type="text" name="user"></label>
+    <label>密码<input type="password" name="pwd"></label>
+    <input type="submit" value="提交">
+    {% csrf_token %}
+</form>
+
+
+<hr>
+</body>
+</html>
