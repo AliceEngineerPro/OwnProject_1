@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'index.html' %}  {# 继承父页面 #}
+    {% load static %}  {# 导入模块路径 #}
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <link rel="icon" href="https://img.icons8.com/office/16/000000/globe-asia.png">
+</head>
+<body>
+{% block content %}
+    {{ block.super }}  {# 继承父模块 #}
+    {% for student in student_list %}  {# 页面模块 #}
+        <h1>学生:{{ student }}</h1>
+    {% endfor %}
+    {% include 'add.html' %}  {# include 关键字, 添加一个页面(static路径下的模板文件) #}
+{% endblock %}
+</body>
+</html>

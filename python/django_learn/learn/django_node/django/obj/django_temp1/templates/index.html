@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load tag %}
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -94,8 +95,10 @@
     <input type="submit" value="提交">
     {% csrf_token %}
 </form>
+<hr>
 
-
+{{ d.age|filter_multi:3 }}
+{% simple_tag_multi d.age 5 6 %}
 <hr>
 </body>
 </html>

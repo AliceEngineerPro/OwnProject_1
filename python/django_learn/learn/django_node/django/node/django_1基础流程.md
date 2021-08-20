@@ -81,7 +81,7 @@ django-admin.py 是Django的一个用于管理任务的命令行工具，manage.
 
 所以我们需要为进入这个项目的后台创建超级管理员：<kbd>python manage.py createsuperuser</kbd>设置好用户名和密码后便可登录啦！
 
-6. 清空数据库：python manage.py  flush
+6. 清空数据库：python manage.py flush
 
 7. 查询某个命令的详细信息： django-admin.py  help  startapp
 
