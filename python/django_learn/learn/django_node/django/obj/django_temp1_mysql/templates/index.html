@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
+    <style>
+        .head{
+            line-height: 40px;
+            background-color: #00c853;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="head">标题</div>
+    <div class="content">
+        <a href="{% url 'add_book' %}" target="_blank">添加书籍</a>
+        <a href="{% url 'mod_book' %}" target="_blank">修改书籍</a>
+        <a href="{% url 'del_book' %}" target="_blank">删除书籍</a>
+        <a href="{% url 'sel_book' %}" target="_blank">查询书籍</a>
+    </div>
+    <hr>
+    <div class="query">
+        {% for book in book_list %}
+            <div>{{ book.name }} | {{ book.price }} | {{ book.author }}</div><br>
+        {% endfor %}
+        <hr>
+        <p>{{ book_msg.name }} {{ book_msg.price }}</p>
+        
+    </div>
+</div>
+</body>
+</html>
