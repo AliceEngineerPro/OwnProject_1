@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classes</title>
+</head>
+<body>
+<form action="{% url 'add_class' %}" method="POST">
+    {% csrf_token %}
+    <p><label>班级<input type="text" name="id"></label></p>
+    <p><input type="submit" value="添加"></p>
+</form>
+</body>
+</html>
