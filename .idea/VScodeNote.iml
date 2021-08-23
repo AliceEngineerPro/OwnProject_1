@@ -17,4 +17,12 @@
       </list>
     </option>
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/python/django_learn/learn/django_node/django/obj/django_temp1_demo1/templates" />
+        <option value="$MODULE_DIR$/python/django_learn/learn/django_node/django/obj/django_temp1_demo1/templates/classes" />
+      </list>
+    </option>
+  </component>
 </module>
