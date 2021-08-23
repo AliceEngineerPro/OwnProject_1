@@ -1,5 +1,5 @@
-from wsgiref.simple_server import make_server
 import time
+from wsgiref.simple_server import make_server
 
 
 def index_404():

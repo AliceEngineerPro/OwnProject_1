@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
+import os
 import sys
 import termios
-import os
 
 os.system('pause')
 

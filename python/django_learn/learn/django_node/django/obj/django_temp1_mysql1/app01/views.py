@@ -1,12 +1,7 @@
-import datetime
-
-from django.shortcuts import render
-
 # Create your views here.
 from app01 import models
 from django.shortcuts import HttpResponse
-from django.db.models import Avg, Min, Sum, Max, Count
-from django.db.models import Q, F
+from django.shortcuts import render
 
 publish = models.Publish
 book = models.Book

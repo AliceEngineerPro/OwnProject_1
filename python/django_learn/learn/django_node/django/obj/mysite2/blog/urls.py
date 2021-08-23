@@ -1,5 +1,5 @@
-from django.conf.urls import url
 from blog import views
+from django.conf.urls import url
 
 urlpatterns = [
     url('article/(\d{4})$', views.article_find),

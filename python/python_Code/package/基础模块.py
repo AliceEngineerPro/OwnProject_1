@@ -6,20 +6,20 @@ python标准库  直接 import 导入
 程序自定义的模块库
 """
 
+import configparser  # 配置文件模块
+import datetime  # 日期时间
+import hashlib  # hash算法, MD5
+import json  # json 信息
+import logging  # 日志文件
+import os  # 操作系统交互
+import pickle  # 序列化, 反序列化
+import random  # 随机模块
+import re  # 正则表达式, 字符串的匹配
+import shelve  # 序列化模块, 比 pickle简单, 只有open一个函数, 返回字典, 可读写, key为字符串, value为python支持的所有类型
+import sys  # 解释器交互
 # 系统模块
 import time  # 时间
-import datetime  # 日期时间
-import random  # 随机模块
-import os  # 操作系统交互
-import sys  # 解释器交互
-import json  # json 信息
-import pickle  # 序列化, 反序列化
-import shelve  # 序列化模块, 比 pickle简单, 只有open一个函数, 返回字典, 可读写, key为字符串, value为python支持的所有类型
 import xml.etree.ElementTree as ET  # xml 模块
-import re  # 正则表达式, 字符串的匹配
-import logging  # 日志文件
-import configparser  # 配置文件模块
-import hashlib  # hash算法, MD5
 
 print('基础模块:time, datetime, random, os, sys, json, pickle, shelve, xml, re, logging, configparser, hashlib')
 

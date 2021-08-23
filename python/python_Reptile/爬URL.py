@@ -1,6 +1,7 @@
 # coding:utf-8
 # 网页url采集爬虫，给定网址，以及存储文件，将该网页内全部网址采集下，可指定文件存储方式
-import requests, time
+import requests
+import time
 from lxml import etree
 
 """

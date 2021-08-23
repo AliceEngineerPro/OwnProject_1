@@ -1,7 +1,8 @@
 # encoding=utf-8
 
-import pymysql
 import time
+
+import pymysql
 
 # 打开数据库连接
 start_time = time.time()

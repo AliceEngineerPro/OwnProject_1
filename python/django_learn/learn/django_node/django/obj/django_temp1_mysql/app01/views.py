@@ -1,8 +1,7 @@
-from django.shortcuts import render
-
+from app01 import models
 # Create your views here.
 from django.shortcuts import HttpResponse
-from app01 import models
+from django.shortcuts import render
 
 book = models.Book
 

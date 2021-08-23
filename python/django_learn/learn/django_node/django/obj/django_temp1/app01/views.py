@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.shortcuts import HttpResponse
-
+import datetime
 # Create your views here.
 import time
-import datetime
+
+from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
 
 def showtime(request):
