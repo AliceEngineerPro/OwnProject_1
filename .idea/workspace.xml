@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8bf241b-9810-49c0-84ad-26bd5715d9ab" name="更改" comment="修订版本_Alpha" />
+    <list default="true" id="c8bf241b-9810-49c0-84ad-26bd5715d9ab" name="更改" comment="demo_classes_Alpha(完成4个接口)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +60,7 @@
       <updated>1629719881822</updated>
       <workItem from="1629719884228" duration="1211000" />
       <workItem from="1629721104761" duration="270000" />
+      <workItem from="1629735470951" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="修订版本_Alpha">
       <created>1629720044336</created>
