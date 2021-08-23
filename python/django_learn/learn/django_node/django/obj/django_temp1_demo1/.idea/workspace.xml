@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37f4276a-8170-4f09-ba50-f3011484be9b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/django_temp1_demo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/models.py" afterDir="false" />
+    <list default="true" id="37f4276a-8170-4f09-ba50-f3011484be9b" name="更改" comment="dj_demo1_Bate">
+      <change afterPath="$PROJECT_DIR$/classes/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/classes/add_classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/classes/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/classes/select_classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/classes/update_classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_temp1_demo1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_temp1_demo1/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_temp1_demo1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_temp1_demo1/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,6 +47,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -90,8 +90,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629721389815</updated>
-      <workItem from="1629721391149" duration="998000" />
+      <workItem from="1629721391149" duration="10725000" />
     </task>
+    <task id="LOCAL-00001" summary="dj_demo1_Bate">
+      <created>1629722601969</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629722601969</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,10 +113,43 @@
             <State />
           </value>
         </entry>
+        <entry key="f6b8aab4-d05a-42a9-a32c-03aa5702588b">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="f6b8aab4-d05a-42a9-a32c-03aa5702588b" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/dev" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="dj_demo1_Bate" />
+    <option name="LAST_COMMIT_MESSAGE" value="dj_demo1_Bate" />
   </component>
 </project>

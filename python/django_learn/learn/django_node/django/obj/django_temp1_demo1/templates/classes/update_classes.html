@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update_classes</title>
+    <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
+</head>
+<body>
+<form action="{% url 'update_classes' %}?uid={{ class_msg.id }}" method="post">
+    {% csrf_token %}
+{#    <label><input type="text" name="nid" value="{{ class_msg.id }}"></label>#}
+    <p><label>班级:<input type="text" name="id" value="{{ class_msg.name }}"></label></p>
+    <p><input type="submit" name="submit" value="修改"></p>
+</form>
+</body>
+</html>
