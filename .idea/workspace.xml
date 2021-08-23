@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8bf241b-9810-49c0-84ad-26bd5715d9ab" name="更改" comment="修订版本_Alpha" />
+    <list default="true" id="c8bf241b-9810-49c0-84ad-26bd5715d9ab" name="更改" comment="修订版本_Alpha">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="dev" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1x7xMcXGWiiZYsiAy5ag42OTRHD" />
@@ -30,7 +50,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629719881822</updated>
-      <workItem from="1629719884228" duration="395000" />
+      <workItem from="1629719884228" duration="1211000" />
+      <workItem from="1629721104761" duration="270000" />
     </task>
     <task id="LOCAL-00001" summary="修订版本_Alpha">
       <created>1629720044336</created>
@@ -62,6 +83,22 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修订版本_Alpha" />
