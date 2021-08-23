@@ -1,9 +1,8 @@
-from selenium import webdriver
 import time
-import os
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver import ChromeOptions
+
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 # 初始化

@@ -1,6 +1,4 @@
 import os
-import sys
-
 
 os.chdir('../../file')
 dic = "{'name': 'jack'}"

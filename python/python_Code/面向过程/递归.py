@@ -9,7 +9,6 @@
 
 
 # 求阶乘
-import time
 
 
 def factorial(x):

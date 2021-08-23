@@ -1,6 +1,6 @@
 # 迭代器和生成器
-from typing import List
 import time
+from typing import List
 
 l: List[int] = [1, 2, 3]
 # for循环

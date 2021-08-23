@@ -1,7 +1,7 @@
-import pymysql
-import sys
-import os
 import msvcrt
+import os
+
+import pymysql
 
 
 class Mysql:

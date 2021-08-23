@@ -1,5 +1,4 @@
 # 生产者消费模型
-import re
 import time
 
 
