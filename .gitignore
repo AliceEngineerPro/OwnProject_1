@@ -13,4 +13,4 @@
 /JavaScript/js_jquery/node_modules/*
 
 # django
-/python/django_learn/learn/django_node/django/obj/django_temp1_demo1/.idea/*
+python/django_learn/learn/django_node/django/obj/django_temp1_demo1/.idea/*
