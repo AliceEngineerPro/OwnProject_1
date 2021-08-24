@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, HttpResponse
 
 
 def classes(request):
-    return render(request, 'home.html')
+    return render(request, 'home_classes.html')
 
 
 def select_classes(request):
