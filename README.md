@@ -1,3 +1,39 @@
-# VScodeNote_note
+# This my Project and for appoint people share !!!
 
-![](https://raw.githubusercontent.com/Amfc-admin/Pic/Pic/Amfc/%E5%A3%81%E7%BA%B81.jpg?token=ARZMTLHRRF3Q2RHLTPIPSYTA7LTTY)
+## including the follow 
+
+- Html
+- Css
+- Javascript
+- Vue
+- json
+- MySQL
+- Python
+- Linux
+- Unix
+- Servers to windows
+- GETAWAY
+- Internet safe
+- Computer safe
+
+And more than DEV frame, DevOps, front Engineer,
+
+There are more learning tips and experiences to share
+
+eg:
+
+  - App
+    - Terminus
+    - VSCode
+    - Captura
+    - Office Tool Plus
+    - ToDesk
+    - IDEA so on
+  - Plug-ins
+    - Chrome
+    - Firefox
+  - Open source tools
+    - uTools
+    - PotPlayer
+
+And so on...
