@@ -2,4 +2,4 @@
 
 开发
 
-django_demo
+django_demo_students
