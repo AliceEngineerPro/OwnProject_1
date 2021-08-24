@@ -1,10 +1,14 @@
-
-
-# idea
-/.idea/*
-
+# file
 # jquery
-/JavaScript/js_jquery/node_modules/*
-
 /JavaScript/js_jquery/package.json
 /JavaScript/js_jquery/package-lock.json
+
+
+# folder
+
+# idea
+/.idea/
+
+# jquery
+/JavaScript/js_jquery/node_modules/
+
