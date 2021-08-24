@@ -3,6 +3,8 @@
 /JavaScript/js_jquery/package.json
 /JavaScript/js_jquery/package-lock.json
 
+# python
+*.pyc
 
 # folder
 
