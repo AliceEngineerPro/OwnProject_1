@@ -7,8 +7,8 @@
 # folder
 
 # idea
-/.idea/
+/.idea/*
 
 # jquery
-/JavaScript/js_jquery/node_modules/
+/JavaScript/js_jquery/node_modules/*
 
