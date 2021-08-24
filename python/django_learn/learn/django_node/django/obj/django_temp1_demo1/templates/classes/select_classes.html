@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select_classes</title>
+    <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
+</head>
+<body>
+<div><a href="{% url 'add_class' %}">添加</a></div>
+<div>
+    <table>
+        <thead>
+            <tr>
+{#                <td>ID</td>#}
+                <td>班级</td>
+                <td>删除</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class_row in classes_list %}
+                <tr>
+{#                    <td>{{ class_row.id }}</td>#}
+                    <td>{{ class_row.name }}</td>
+                    <td><a href="{% url 'del_classes' %}?uid={{ class_row.id }}">删除</a></td>
+                    <td><a href="{% url 'update_classes' %}?uid={{ class_row.id }}">编辑</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
