@@ -60,6 +60,9 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates',
             BASE_DIR / 'templates/classes',
+            BASE_DIR / 'templates/teachers',
+            BASE_DIR / 'templates/students',
+
 
         ],
         'APP_DIRS': True,
@@ -141,7 +144,10 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'templates',
-    BASE_DIR / 'templates/classes'
+    BASE_DIR / 'templates/classes',
+    BASE_DIR / 'templates/teachers',
+
+
 ]
 
 # Default primary key field type
