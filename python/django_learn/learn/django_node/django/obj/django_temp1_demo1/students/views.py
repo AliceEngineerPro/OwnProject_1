@@ -13,7 +13,6 @@ def index(request):
 def select_students(request):
     students_list = Student.objects.all()
     return render(request, 'select_students.html', {'students_list': students_list})
-    # return render(request, 'select_students.html', {'students_list': students_list})
 
 
 def add_students(request):
@@ -27,3 +26,19 @@ def add_students(request):
     elif request.method == 'GET':
         classes_msg = Classes.objects.all()
         return render(request, 'add_students.html', {'classes_msg': classes_msg})
+
+
+def del_students(request):
+    uid = request.GET.get('uid')
+    Student.objects.filter(id=uid).delete()
+    return redirect(to=select_students)
+
+
+def update_students(request):
+    if request.method == 'GET':
+        uid = request.GET.get('uid')
+        students_list = Student.objects.filter(id=uid).get()
+        classes_msg = Classes.objects.all()
+        print(students_list.name, classes_msg)
+        return render(request, 'update_students.html', {'students_list': students_list, 'classes_msg': classes_msg})
+    pass

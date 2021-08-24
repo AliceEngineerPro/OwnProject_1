@@ -24,14 +24,17 @@
                 <td>{{ students_row.id }}</td>
                 <td>{{ students_row.name }}</td>
                 <td>{{ students_row.age }}</td>
-                <td>{{ students_row.gender }}</td>
+                {% if students_row.gender == True %}
+                    <td>男</td>
+                    {% elif students_row.gender == False %}
+                    <td>女</td>
+                {% endif %}
                 <td>{{ students_row.classes_to_student.name }}</td>  {# 用models中的变量, 不能用字段名称 #}
 {#                <td>{{ students_row.classes_id.name }}</td>#}
-                <td><a href="">删除</a></td>
-                <td><a href="">编辑</a></td>
+                <td><a href="{% url 'del_students' %}?uid={{ students_row.id }}">删除</a></td>
+                <td><a href="{% url 'update_students' %}?uid={{ students_row.id }}">编辑</a></td>
             </tr>
         {% endfor %}
-
     </tbody>
 </table>
 </body>
