@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select_students</title>
+</head>
+<body>
+<a href="{% url 'add_students' %}">添加</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>班级ID</th>
+            <th>删除</th>
+            <th>编辑</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for students_row in students_list %}
+            <tr>
+                <td>{{ students_row.id }}</td>
+                <td>{{ students_row.name }}</td>
+                <td>{{ students_row.age }}</td>
+                {% if students_row.gender == True %}
+                    <td>男</td>
+                    {% elif students_row.gender == False %}
+                    <td>女</td>
+                {% endif %}
+                <td>{{ students_row.classes_to_student.name }}</td>  {# 用models中的变量, 不能用字段名称 #}
+{#                <td>{{ students_row.classes_id.name }}</td>#}
+                <td><a href="{% url 'del_students' %}?uid={{ students_row.id }}">删除</a></td>
+                <td><a href="{% url 'update_students' %}?uid={{ students_row.id }}">编辑</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

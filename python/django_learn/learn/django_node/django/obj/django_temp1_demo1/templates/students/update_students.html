@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update_students</title>
+</head>
+<body>
+<form action="{% url 'update_students' %}?uid=" method="post">
+    {% csrf_token %}
+    <label>姓名:<input type="text" name="name" value="{{ students_list.name }}"></label><br>
+    <label>年龄:<input type="text" name="age" value="{{ students_list.age }}"></label><br>
+    <label>性别:
+        {% if students_list.gender == True %}
+            男:<input type="radio" name="gender" value=1 checked>
+            女:<input type="radio" name="gender" value=0>
+        {% elif students_list.gender == False %}
+            男:<input type="radio" name="gender" value=1>
+            女:<input type="radio" name="gender" value=0 checked>
+        {% endif %}
+    </label><br>
+    <label>班级:
+        <select name="class_id">
+{#        <option value={{ students_list.classes_to_student_id }} selected>{{ students_list.classes_to_student.name }}</option>#}
+            {% for classes in classes_msg %}
+                {% if classes.id == students_list.classes_to_student_id %}
+                    <option value={{ classes.id }} selected>{{ classes.name }}</option>
+                    {% else %}
+                    <option value={{ classes.id }}>{{ classes.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </label><br>
+    <input type="submit" name="submit" value="添加">
+</form>
+</body>
+</html>
