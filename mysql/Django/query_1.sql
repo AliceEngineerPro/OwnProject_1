@@ -17,4 +17,4 @@ select * from app01_book where id in (3, 5, 1) ;
 
 create database django_temp_demo1 charset 'utf8';
 
-show create database django_temp_demo1 ;
+show create database django_temp1_demo1 ;
