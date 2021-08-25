@@ -5,7 +5,7 @@
     <title>update_students</title>
 </head>
 <body>
-<form action="{% url 'update_students' %}?uid=" method="post">
+<form action="{% url 'update_students' %}?uid={{ students_list.id }}" method="post">
     {% csrf_token %}
     <label>姓名:<input type="text" name="name" value="{{ students_list.name }}"></label><br>
     <label>年龄:<input type="text" name="age" value="{{ students_list.age }}"></label><br>

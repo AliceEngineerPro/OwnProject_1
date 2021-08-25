@@ -41,4 +41,13 @@ def update_students(request):
         classes_msg = Classes.objects.all()
         print(students_list.name, classes_msg)
         return render(request, 'update_students.html', {'students_list': students_list, 'classes_msg': classes_msg})
-    pass
+    if request.method == 'POST':
+        uid = request.GET.get('uid')
+        name_msg = request.POST.get('name')
+        age_msg = request.POST.get('age')
+        gender_mag = request.POST.get('gender')
+        class_id_msg = request.POST.get('class_id')
+        Student.objects.filter(id=uid).update(name=name_msg, age=age_msg, gender=gender_mag,
+                                              classes_to_student=class_id_msg)
+        print(uid, name_msg, age_msg, gender_mag, class_id_msg)
+        return redirect(to=select_students)
