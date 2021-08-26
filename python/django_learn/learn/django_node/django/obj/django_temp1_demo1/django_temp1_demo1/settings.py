@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'classes',
     'students',
-    # ''
+    'teachers',
 
 ]
 
@@ -64,8 +64,7 @@ TEMPLATES = [
             BASE_DIR / 'templates/classes',
             BASE_DIR / 'templates/teachers',
             BASE_DIR / 'templates/students',
-
-
+            BASE_DIR / 'templates/ajax',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -145,11 +144,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'templates',
-    BASE_DIR / 'templates/classes',
-    BASE_DIR / 'templates/teachers',
-
-
+    BASE_DIR / 'static',
+    BASE_DIR / 'static/node_modules',
+    BASE_DIR / 'static/node_modules/jquery/dist/',
 ]
 
 # Default primary key field type

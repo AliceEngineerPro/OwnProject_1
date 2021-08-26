@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
+    <style>
+        .btn{
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #bdbdbd;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label>用户名<input type="text" id="id_username" placeholder="用户名"></label>
+    <label>密码<input type="text" id="id_password" placeholder="密码"></label>
+    <div class="btn" onclick="submitFrom();">提交</div>
+</div>
+<script src="/static/node_modules/jquery/dist/jquery.js"></script>
+<script>
+    function submitFrom() {
+        var data_dict = {'user': $('#id_username').val(), 'passwd': $('#id_password').val()};
+        $.ajax({
+            url: "{% url 'ajax2' %}",
+            type: "GET",
+            data: data_dict,
+            success: function (arg) {
+                console.log(arg)
+            }
+        })
+    }
+</script>
+</body>
+</html>

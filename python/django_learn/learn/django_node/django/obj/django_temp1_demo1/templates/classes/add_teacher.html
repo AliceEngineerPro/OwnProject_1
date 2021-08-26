@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_teacher</title>
+</head>
+<body>
+<form action="{% url 'allot_teachers' %}?uid={{ uid }}" method="post">
+{% csrf_token %}
+<label>老师:
+    <select name="teacher_id" size="10" multiple>
+        {% for teachers in teacher %}
+            {% if teachers.id in class %}
+                <option value="{{ teachers.id }}" selected>{{ teachers.name }}</option>
+                {% else %}
+                <option value="{{ teachers.id }}">{{ teachers.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+<input type="submit" name="submit" value="提交">
+</label>
+</form>
+</body>
+</html>

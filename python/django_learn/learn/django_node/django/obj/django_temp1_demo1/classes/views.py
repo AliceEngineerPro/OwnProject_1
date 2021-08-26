@@ -3,6 +3,7 @@
 # views
 from classes.models import Classes
 from django.shortcuts import render, redirect, HttpResponse
+from classes.models import Teachers
 
 
 def classes(request):
@@ -41,3 +42,17 @@ def update_classes(request):
         return redirect(to=select_classes)
 
 
+def allot_teachers(request):
+    if request.method == 'GET':
+        uid = request.GET.get('uid')
+        classes_msg = Classes.objects.filter(id=uid).get()  # 获取ID对应的班级信息
+        # class_teacher_list = classes_msg.classes_and_teachers.all()  # 获取当前ID下所有classes_classes_and_teacher的数据
+        class_teacher_list = classes_msg.classes_and_teachers.all().values_list('id')
+        id_list = list(zip(*class_teacher_list))[0] if list(zip(*class_teacher_list)) else []
+        teachers_list = Teachers.objects.all()
+        return render(request, 'add_teacher.html', {'class': id_list, 'teacher': teachers_list, 'uid': uid})
+    elif request.method == 'POST':
+        uid = request.GET.get('uid')
+        teacher_name_list = request.POST.getlist('teacher_id')
+        Classes.objects.filter(id=uid).first().classes_and_teachers.set(teacher_name_list)
+        return redirect(to=select_classes)
