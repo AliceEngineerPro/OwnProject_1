@@ -22,6 +22,5 @@ urlpatterns = [
     path('classes/', include('classes.urls')),
     path('students/', include('students.urls')),
     path('teachers/', include('teachers.urls')),
-
-
+    path('ajax/', include('ajax.urls'))
 ]

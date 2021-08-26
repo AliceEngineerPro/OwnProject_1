@@ -1,15 +1,13 @@
-# file
-# jquery
-/JavaScript/js_jquery/package.json
-/JavaScript/js_jquery/package-lock.json
-
 # python
 *.pyc
 
-# folder
 
+# folder
 # idea
 .idea/
 
 # jquery
 node_modules/
+
+# python
+__pycache__/
