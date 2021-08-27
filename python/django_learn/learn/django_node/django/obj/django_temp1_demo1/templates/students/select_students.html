@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>select_students</title>
+    <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
 </head>
 <body>
 <a href="{% url 'add_students' %}">添加</a>
@@ -33,9 +35,30 @@
 {#                <td>{{ students_row.classes_id.name }}</td>#}
                 <td><a href="{% url 'del_students' %}?uid={{ students_row.id }}">删除</a></td>
                 <td><a href="{% url 'update_students' %}?uid={{ students_row.id }}">编辑</a></td>
+                <td nid="{{ students_row.id }}"><a onclick="removeStudent(this);" href="Javascript:void (0);">Ajax删除</a></td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+<script src="{% static '/jquery.js' %}"></script>
+<script>
+    function removeStudent(ths) {
+        var nid = $(ths).parent().attr('nid');
+        $.ajax({
+            url: "{% url 'ajax_del_students' %}",
+            type: "GET",
+            data: {nid: nid},
+            success: function (arg) {
+                if (arg === '成功'){
+                    // location.reload();
+                    $(ths).parent().parent().remove();
+                }
+                else {
+                    alert(arg);
+                }
+            }
+        })
+    }
+</script>
 </body>
 </html>
