@@ -21,7 +21,15 @@
     <label>密码<input type="text" id="id_password" placeholder="密码"></label>
     <div class="btn" onclick="submitFrom();">提交</div>
 </div>
-<script src="/static/node_modules/jquery/dist/jquery.js"></script>
+<hr>
+<div>
+    <label>数字1:<input type="text" id="i1" placeholder="数字2"></label>
+    <label>数字2:<input type="text" id="i2" placeholder="数字2"></label>
+    <div class="btn" onclick="addFrom()">计算</div>
+    <label>结果:<input type="text" id="i3" placeholder="结果"></label>
+</div>
+{#<script src="/static/node_modules/jquery/dist/jquery.js"></script>#}
+<script src="{% static 'jquery.js' %}"></script>
 <script>
     function submitFrom() {
         var data_dict = {'user': $('#id_username').val(), 'passwd': $('#id_password').val()};
@@ -30,7 +38,20 @@
             type: "GET",
             data: data_dict,
             success: function (arg) {
-                console.log(arg)
+                console.log(arg);
+            }
+        })
+    }
+
+    function addFrom() {
+        var v1 = $('#i1').val();
+        var v2 = $('#i2').val();
+        $.ajax({
+            url: "{% url 'ajax3' %}",
+            type: "POST",
+            data: {'v1': v1, 'v2': v2},
+            success: function (arg) {
+                $('#i3').val(arg);
             }
         })
     }

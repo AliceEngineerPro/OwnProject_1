@@ -51,3 +51,13 @@ def update_students(request):
                                               classes_to_student=class_id_msg)
         print(uid, name_msg, age_msg, gender_mag, class_id_msg)
         return redirect(to=select_students)
+
+
+def ajax_del_students(request):
+    nid = request.GET.get('nid')
+    msg = '成功'
+    try:
+        Student.objects.filter(id=nid).delete()
+    except Exception as e:
+        msg = str(e)
+    return HttpResponse(msg)

@@ -11,5 +11,4 @@ urlpatterns = [
     url('del', views.del_classes, name='del_classes'),
     url('update', views.update_classes, name='update_classes'),
     url('allot', views.allot_teachers, name='allot_teachers'),
-
 ]
