@@ -8,7 +8,7 @@ class Classes(models.Model):
     班级表
     """
     name = models.CharField(max_length=24)
-    classes_and_teachers = models.ManyToManyField(to='Teachers')
+    to_teachers = models.ManyToManyField(db_column='teacher_id', to='Teachers')
 
 
 class Teachers(models.Model):
@@ -25,4 +25,4 @@ class Student(models.Model):
     name = models.CharField(max_length=24)
     age = models.IntegerField()
     gender = models.BooleanField()
-    classes_to_student = models.ForeignKey(to='Classes', on_delete=models.CASCADE)
+    classes = models.ForeignKey(db_column='class_id', to='Classes', on_delete=models.CASCADE)

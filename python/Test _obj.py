@@ -29,6 +29,4 @@ def sum_input():
         return return_value
 
 
-# print(sum_input())
-
-
+print(sum_input())

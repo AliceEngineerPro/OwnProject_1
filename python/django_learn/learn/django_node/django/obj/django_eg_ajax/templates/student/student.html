@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <title>student</title>
     <link rel="icon" href="https://pic.amfc.ltd/learn/python/UI/icon-asia30.png">
     <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="/static/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/static/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
     <style>
         .operation{
-
+            margin: 0 5px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div>
-        <a class="btn btn-primary" href="#">添加</a>
-        <a class="btn btn-danger" href="#">删除</a>
+        <a class="btn btn-primary" id="add">添加</a>
+        <a class="btn btn-danger">删除</a>
     </div>
     <div>
         <table class="table table-hover">
@@ -45,9 +47,10 @@
                     {% else %}
                     <td>女</td>
                 {% endif %}
-                <td>{{ student.classes_to_student.name }}</td>
+                <td>{{ student.classes.name }}</td>
                 <td>
-                    <a class="fa fa-trash-o operation"></a>
+                    <a class="fa fa-trash-o operation" id="del"></a>
+                    <a class="fa fa-trash-o operation" href="{% url 'delete' %}?nid={{ student.id }}"></a>
                     <a class="fa fa-pencil-square-o operation"></a>
                 </td>
                 </tr>
@@ -56,5 +59,120 @@
         </table>
     </div>
 </div>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalLabel">添加学生</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{% url 'student' %}" method="post">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="姓名" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="col-sm-2 control-label">年龄</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="age" placeholder="年龄" name="age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="0">男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="1">女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="class" class="col-sm-2 control-label">班级</label>
+                        <div class="col-sm-10">
+                            <label>
+                            <select id="class" class="form-control" name="class_id">
+                                {% for class in class_list %}
+                                    <option value="{{ class.id }}">{{ class.name }}</option>
+                                {% endfor %}
+                            </select>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span id="errorMsg" style="color: #ff0000"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary" id="btnSave">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog" role="document">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
+
+
+<script>
+    $(function () {
+        bindEvent();
+        bindSave();
+        bindDel();
+    })
+
+    function bindEvent() {
+       $('#add').click(function () {
+           $('#addModal').modal('show')
+       })
+    }
+
+    function bindSave() {
+        $('#btnSave').click(function () {
+            var postData = {};
+            $('#addModal').find('input,select').each(function () {
+                var v = $(this).val();
+                var n = $(this).attr('name');
+                if(n==='gender'){
+                    if($(this).prop('checked')){
+                        postData[n] = v;
+                    }
+                }else{
+                    postData[n] = v;
+                }
+            });
+            $.ajax({
+                url: '{% url 'student' %}',
+                type: 'POST',
+                data: postData,
+                success: function (arg){
+                    var dict = JSON.parse(arg);
+                    if(dict.status){
+                        window.location.reload();
+                    }else {
+                        $('#errorMsg').text(dict.message);
+                    }
+                }
+            })
+        });
+    }
+
+    function bindDel() {
+        $('#del').click(function () {
+            $('#delModal').modal('show')
+        })
+    }
+</script>
 </body>
 </html>
