@@ -3,5 +3,6 @@ from ajax import views
 
 
 urlpatterns = [
-    url('student/', views.student, name='student'),
+    url('^student/', views.student, name='student'),
+    url('^del/', views.delete, name='delete')
 ]
