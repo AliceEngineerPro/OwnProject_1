@@ -49,7 +49,7 @@
                 {% endif %}
                 <td>{{ student.classes.name }}</td>
                 <td>
-                    <a class="fa fa-trash-o operation" id="del"></a>
+                    <button class="fa fa-trash-o operation" id="del"></button>
                     <a class="fa fa-trash-o operation" href="{% url 'delete' %}?nid={{ student.id }}"></a>
                     <a class="fa fa-pencil-square-o operation"></a>
                 </td>
@@ -117,11 +117,27 @@
 
 <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
     <div class="modal-dialog" role="document">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalLabel" style="color: #ff0000">确认是否删除!!</h4>
+            </div>
+            <div class="modal-footer">
+                <span id="errorMsg" style="color: #ff0000"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary" id="btnDel">删除</button>
+            </div>
+        </div>
     </div>
 </div>
+
+{#<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">#}
+{#    <div class="modal-dialog" role="document">#}
+{#        <button type="button" class="close" data-dismiss="alert" aria-label="Close">#}
+{#            <span aria-hidden="true">&times;</span>#}
+{#        </button>#}
+{#    </div>#}
+{#</div>#}
 
 
 
