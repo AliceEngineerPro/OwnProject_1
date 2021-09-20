@@ -29,6 +29,11 @@ def student(request):
 
 
 def delete(request):
-    s_id = request.GET.get('nid')
-    models.Student.objects.filter(id=s_id).delete()
-    return redirect(to=student)
+    ret = {'status': True}
+    try:
+        s_id = request.GET.get('nid')
+        models.Student.objects.filter(id=s_id).delete()
+    except Exception as e:
+        ret['status'] = False
+        pass
+    return HttpResponse(json.dumps(ret))
