@@ -120,7 +120,7 @@
     <div class="modal-dialog" role="document">
         <div class="alert alert-danger" role="alert">
             <h3 style="color: #ff0000">删除</h3>
-            <div>...<input style="display: none;" type="text" id="delNid" /></div>
+            <div><label><input style="display: none;" type="text" id="delNid"></label></div>  {# 取行ID #}
             <div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button id="delConfirm" type="button" class="btn btn-danger">确定</button>
@@ -188,7 +188,7 @@
             var rowId = $('#delNid').val();
 
             $.ajax({
-                url: '{% url 'delete' %}',
+                url: '{% url 'delete_ajax' %}',
                 type: 'GET',
                 data: {'nid':rowId},
                 success:function (arg) {

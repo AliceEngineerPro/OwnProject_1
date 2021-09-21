@@ -28,7 +28,9 @@ def student(request):
         return HttpResponse(result)
 
 
-def delete(request):
+# ajax删除
+
+def delete_ajax(request):
     ret = {'status': True}
     try:
         s_id = request.GET.get('nid')
@@ -37,3 +39,10 @@ def delete(request):
         ret['status'] = False
         pass
     return HttpResponse(json.dumps(ret))
+
+
+# 静默删除
+def delete(request):
+    s_id = request.GET.get('nid')
+    models.Student.objects.filter(id=s_id).delete()
+    return redirect(to='student')
