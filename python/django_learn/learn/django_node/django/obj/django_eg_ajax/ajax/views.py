@@ -46,3 +46,8 @@ def delete(request):
     s_id = request.GET.get('nid')
     models.Student.objects.filter(id=s_id).delete()
     return redirect(to='student')
+
+
+# ajax修改
+def change_ajax(request):
+    pass

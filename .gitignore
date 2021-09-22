@@ -146,3 +146,6 @@ __pycache__/
 
 #font-awesome
 font-awesome-*/
+
+# 爬虫文件
+loads/

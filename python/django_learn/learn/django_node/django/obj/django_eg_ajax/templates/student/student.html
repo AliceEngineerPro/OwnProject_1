@@ -35,7 +35,7 @@
                 </th>
             </tr>
             </thead>  {# 表头 #}
-            <tbody>
+            <tbody id="tb">
             {% for student in student_list %}
                 <tr nid="{{ student.id }}">  {# 自己定义选项rowID=student.id #}
                 <td>{{ student.id }}</td>
@@ -50,7 +50,7 @@
                 <td>
                     <button class="fa fa-trash-o operation del-row" id="del">删除</button>  {# 有提示框的删除操作 #}
                     <a class="fa fa-trash-o operation" href="{% url 'delete' %}?nid={{ student.id }}">静默删除</a>  {# 直接删除 #}
-                    <a class="fa fa-pencil-square-o operation"></a>  {# 修改 #}
+                    <a class="fa fa-pencil-square-o operation change-row"></a>  {# 修改 #}
                 </td>
                 </tr>
             {% endfor %}
@@ -59,7 +59,7 @@
     </div>
 </div>  {# indexPage #}
 
-<!-- Modal ADD -->
+<!-- Modal Add -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -115,7 +115,7 @@
     </div>
 </div>  {# 添加学生对话框 #}
 
-<!-- Modal DEL-->
+<!-- Modal Del-->
 <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="alert alert-danger" role="alert">
@@ -129,12 +129,69 @@
     </div>
 </div>  {# 删除学生提示框 #}
 
+<!-- Modal Change -->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalLabel">编辑学生信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{% url 'student' %}" method="post">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="姓名" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="col-sm-2 control-label">年龄</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="age" placeholder="年龄" name="age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="0">男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="1">女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="class" class="col-sm-2 control-label">班级</label>
+                        <div class="col-sm-10">
+                            <label>
+                            <select id="class" class="form-control" name="class_id">
+                                {% for class in class_list %}
+                                    <option value="{{ class.id }}">{{ class.name }}</option>
+                                {% endfor %}
+                            </select>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span id="errorMsg" style="color: #ff0000"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary" id="btnChange">提交</button>
+            </div>
+        </div>
+    </div>
+</div>  {# 修改学生对话框 #}
+
 <script>
     $(function () {
         bindEvent();
         bindSave();
         bindDel();
         bindDelConfirm();
+        bindChange();
     })
 
     function bindEvent() {
@@ -200,6 +257,22 @@
                     }
                 }
             })
+        })
+    }
+    
+    function bindChange() {
+        $('#tb').on('click', '.change-row', function () {
+            $('#changeModal').modal('show');
+            // 获取当前行数据
+            var tds = $(this).parent().prevAll();
+            var valueList = [];
+            $(this).parent().prevAll().each(function () {
+                var v = $(this).text();
+                valueList.push(v);
+            })
+            console.log(valueList)
+            $('#changeModal select[name] ')
+            // 数据赋值
         })
     }
 </script>
