@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import uuid
-import os, sys
+import os
 
 
 response = requests.get(
@@ -15,6 +15,9 @@ response.encoding = response.apparent_encoding
 soup = BeautifulSoup(response.text, features='html.parser')
 target = soup.find(id='auto-channel-lazyload-article')
 li_list = target.find_all('li')
+
+print(os.getcwd())
+
 for i in li_list:
     a = i.find('a')
     if a:
