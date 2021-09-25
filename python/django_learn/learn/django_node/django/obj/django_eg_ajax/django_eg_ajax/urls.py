@@ -21,5 +21,5 @@ from ajax import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ajax/', include('ajax.urls')),
+    path('student/', include('ajax.urls')),
 ]

@@ -20,7 +20,6 @@
 <div class="container">
     <div>
         <a class="btn btn-primary" id="add">添加</a>
-        <a class="btn btn-danger">删除</a>
     </div>
     <div>
         <table class="table table-hover">
@@ -35,10 +34,10 @@
                     <div>操作</div>
                 </th>
             </tr>
-            </thead>
-            <tbody>
+            </thead>  {# 表头 #}
+            <tbody id="tb">
             {% for student in student_list %}
-                <tr>
+                <tr nid="{{ student.id }}">  {# 自己定义选项rowID=student.id #}
                 <td>{{ student.id }}</td>
                 <td>{{ student.name }}</td>
                 <td>{{ student.age }}</td>
@@ -49,17 +48,18 @@
                 {% endif %}
                 <td>{{ student.classes.name }}</td>
                 <td>
-                    <button class="fa fa-trash-o operation" id="del"></button>
-                    <a class="fa fa-trash-o operation" href="{% url 'delete' %}?nid={{ student.id }}"></a>
-                    <a class="fa fa-pencil-square-o operation"></a>
+                    <button class="fa fa-trash-o operation del-row" id="del">删除</button>  {# 有提示框的删除操作 #}
+                    <a class="fa fa-trash-o operation" href="{% url 'delete' %}?nid={{ student.id }}">静默删除</a>  {# 直接删除 #}
+                    <a class="fa fa-pencil-square-o operation change-row"></a>  {# 修改 #}
                 </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-</div>
+</div>  {# indexPage #}
 
+<!-- Modal Add -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -113,39 +113,85 @@
             </div>
         </div>
     </div>
-</div>
+</div>  {# 添加学生对话框 #}
 
-<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+<!-- Modal Del-->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="alert alert-danger" role="alert">
+            <h3 style="color: #ff0000">删除</h3>
+            <div><label><input style="display: none;" type="text" id="delNid"></label></div>  {# 取行ID #}
+            <div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button id="delConfirm" type="button" class="btn btn-danger">确定</button>
+            </div>
+        </div>
+    </div>
+</div>  {# 删除学生提示框 #}
+
+<!-- Modal Change -->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="addModalLabel" style="color: #ff0000">确认是否删除!!</h4>
+                <h4 class="modal-title" id="addModalLabel">编辑学生信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="{% url 'student' %}" method="post">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="姓名" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="col-sm-2 control-label">年龄</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="age" placeholder="年龄" name="age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="0">男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender" value="1">女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="class" class="col-sm-2 control-label">班级</label>
+                        <div class="col-sm-10">
+                            <label>
+                            <select id="class" class="form-control" name="class_id">
+                                {% for class in class_list %}
+                                    <option value="{{ class.id }}">{{ class.name }}</option>
+                                {% endfor %}
+                            </select>
+                            </label>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <span id="errorMsg" style="color: #ff0000"></span>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="submit" class="btn btn-primary" id="btnDel">删除</button>
+                <button type="submit" class="btn btn-primary" id="btnChange">提交</button>
             </div>
         </div>
     </div>
-</div>
-
-{#<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">#}
-{#    <div class="modal-dialog" role="document">#}
-{#        <button type="button" class="close" data-dismiss="alert" aria-label="Close">#}
-{#            <span aria-hidden="true">&times;</span>#}
-{#        </button>#}
-{#    </div>#}
-{#</div>#}
-
-
+</div>  {# 修改学生对话框 #}
 
 <script>
     $(function () {
         bindEvent();
         bindSave();
         bindDel();
+        bindDelConfirm();
+        bindChange();
     })
 
     function bindEvent() {
@@ -185,8 +231,48 @@
     }
 
     function bindDel() {
-        $('#del').click(function () {
-            $('#delModal').modal('show')
+     $('.del-row').click(function () {
+         $('#delModal').modal('show');
+         // 获取行ID
+         var rowId = $(this).parent().parent().attr('nid');
+         $('#delNid').val(rowId);
+
+     })
+    }
+
+    function bindDelConfirm() {
+        $('#delConfirm').click(function () {
+            var rowId = $('#delNid').val();
+
+            $.ajax({
+                url: '{% url 'delete_ajax' %}',
+                type: 'GET',
+                data: {'nid':rowId},
+                success:function (arg) {
+                    var dict = JSON.parse(arg);
+                    if (dict.status){
+                        window.location.reload();
+                    }else {
+                        $('#errorMsg').text(dict.status);
+                    }
+                }
+            })
+        })
+    }
+    
+    function bindChange() {
+        $('#tb').on('click', '.change-row', function () {
+            $('#changeModal').modal('show');
+            // 获取当前行数据
+            var tds = $(this).parent().prevAll();
+            var valueList = [];
+            $(this).parent().prevAll().each(function () {
+                var v = $(this).text();
+                valueList.push(v);
+            })
+            console.log(valueList)
+            $('#changeModal select[name] ')
+            // 数据赋值
         })
     }
 </script>

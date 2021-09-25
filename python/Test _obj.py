@@ -1,3 +1,6 @@
+import requests
+
+
 def px():
     width = int(input('长(px)-->').strip())
     height = int(input('高(px)-->').strip())
@@ -30,3 +33,6 @@ def sum_input():
 
 
 print(sum_input())
+
+
+
