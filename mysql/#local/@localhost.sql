@@ -11,3 +11,5 @@ from ajax_student as student
          left join ajax_teachers as teacher
          left join ajax_classes_to_teachers as ct on ct.teachers_id = teacher.id on ct.classes_id = class.id
 where student.name = '卢平';
+
+create database test char set utf8 ;

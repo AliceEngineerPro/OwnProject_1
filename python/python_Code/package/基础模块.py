@@ -477,7 +477,7 @@ def hashlib_module():
     return message
 
 
-# print(time_module())
+print(time_module())
 # print(data_time_module())
 # print(random_module())
 # print(os_module())
