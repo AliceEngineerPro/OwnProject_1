@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.vscode/
 
 # C extensions
 *.so
@@ -149,3 +150,4 @@ font-awesome-*/
 
 # 爬虫文件
 loads/
+
