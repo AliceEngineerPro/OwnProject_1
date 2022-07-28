@@ -1,6 +1,6 @@
 # This my Project and for appoint people share !!!
 
-## including the follow 
+## including the follow
 
 - Html
 - Css
@@ -11,6 +11,7 @@
 - Python
 - Linux
 - Unix
+- ShellScript
 - Servers to windows
 - GETAWAY
 - Internet safe
@@ -22,18 +23,18 @@ There are more learning tips and experiences to share
 
 eg:
 
-  - App
-    - Terminus
-    - VSCode
-    - Captura
-    - Office Tool Plus
-    - ToDesk
-    - IDEA so on
-  - Plug-ins
-    - Chrome
-    - Firefox
-  - Open source tools
-    - uTools
-    - PotPlayer
+- App
+  - Terminus
+  - VSCode
+  - Captura
+  - Office Tool Plus
+  - ToDesk
+  - IDEA so on
+- Plug-ins
+  - Chrome
+  - Firefox
+- Open source tools
+  - uTools
+  - PotPlayer
 
 And so on...
